@@ -35,9 +35,14 @@ public class ScrabbleTest {
         });
     }
 
+    @Test
+    void shouldAbleToPerformForTheMoreString() throws EmptyStringException, OtherThanStringException {
+        Scrabble scrabble=new Scrabble();
 
+        int actaul=scrabble.perform("Rahul Basutkar");
+        assertEquals(24,actaul);
 
-
+    }
 
 
 }
