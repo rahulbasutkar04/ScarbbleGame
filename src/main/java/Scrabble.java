@@ -1,8 +1,8 @@
 public class Scrabble {
-    public int perform(String input) {
+    public int perform(String input) throws EmptyStringException {
 
 
-
+      if(input.isEmpty()) throw  new EmptyStringException("Input can not be empty");
         String[] letters = {"EAIONRTLSU","DG","BCMP","FHVWY","K","JX","QZ"};
         int[] points = {1, 2, 3, 4, 5, 8, 10};
 
