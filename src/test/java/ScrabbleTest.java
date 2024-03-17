@@ -11,7 +11,7 @@ public class ScrabbleTest {
     }
 
     @Test
-    void shouldAbleTOStartTeGame() throws EmptyStringException {
+    void shouldAbleTOStartTeGame() throws EmptyStringException, OtherThanStringException {
         Scrabble scrabble = new Scrabble();
         int actual = scrabble.perform("RAHUL");
         assertEquals(8, actual);
@@ -26,5 +26,18 @@ public class ScrabbleTest {
            scrabble.perform("");
         });
     }
+
+    @Test
+    void shouldAbleToThrowExceptionIfOtherThanStringFound(){
+        Scrabble scrabble = new Scrabble();
+        assertThrows(OtherThanStringException.class,()->{
+            scrabble.perform("123raj");
+        });
+    }
+
+
+
+
+
 
 }
