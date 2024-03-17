@@ -17,7 +17,7 @@ public class Scrabble {
 
     }
 
-    public static int help(String input) {
+    private  static int help(String input) {
         String[] letters = {"EAIONRTLSU", "DG", "BCMP", "FHVWY", "K", "JX", "QZ"};
         int[] points = {1, 2, 3, 4, 5, 8, 10};
 
