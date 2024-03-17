@@ -40,9 +40,28 @@ public class ScrabbleTest {
         Scrabble scrabble=new Scrabble();
 
         int actaul=scrabble.perform("Rahul Basutkar");
-        assertEquals(24,actaul);
+        assertEquals(22,actaul);
 
     }
 
+    @Test
+    void  shouldAbleToThrowExceptionIfMoreThanOneSpacesFoundInTheString(){
+
+        Scrabble scrabble = new Scrabble();
+        assertThrows(OtherThanStringException.class,()->{
+            scrabble.perform("rahul   basutkar");
+        });
+
+    }
+
+    @Test
+    void  shouldAbleToThrowExceptionIfMoreThanOneSpacesFoundInEndTheString(){
+
+        Scrabble scrabble = new Scrabble();
+        assertThrows(OtherThanStringException.class,()->{
+            scrabble.perform("rahul  basutkar    ");
+        });
+
+    }
 
 }
