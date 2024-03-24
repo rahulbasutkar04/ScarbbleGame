@@ -1,20 +1,24 @@
 # SCRABBLE GAME
-This is the OOMS for the Scrabble Game
 
 ## States:
-
 - `letters`: An array of strings 
-
-- `pointers`: An array of integers
-
+- `points`: An array of integers
 - `input`: A string 
-
 - `sum`: An integer 
 
+## Behaviors:
+- `validateInput()`: Public method
+- `perform()`: Public method
+- `help()`: Private method
+- `InputExceptions()`: Public method
 
-## Behavoiur
+## Extended Features:
 
-- `validateInput()` : public
-- `perform()` : public
-- `help()` :private
--  `InputExcetions()` :public
+### Classes:
+- `Operations`: Public class
+- `Doubles`: Public class (Inherited from `Operations`)
+- `Triples`: Public class (Inherited from `Operations`)
+
+### Methods:
+- `calculateForWord()`: Public method
+- `calculateForLetter()`: Public method
