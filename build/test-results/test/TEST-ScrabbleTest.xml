@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ScrabbleTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-03-17T05:25:20" hostname="RAHULSLAPPY" time="0.076">
+<testsuite name="ScrabbleTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-03-24T14:12:37" hostname="RAHULSLAPPY" time="0.077">
   <properties/>
-  <testcase name="shouldAbleTOCreateInstanceOfScrabbleClass()" classname="ScrabbleTest" time="0.061"/>
-  <testcase name="shouldAbleToThrowExceptionIfInputISEmpty()" classname="ScrabbleTest" time="0.007"/>
-  <testcase name="shouldAbleTOStartTeGame()" classname="ScrabbleTest" time="0.004"/>
+  <testcase name="shouldAbleTOCreateInstanceOfScrabbleClass()" classname="ScrabbleTest" time="0.053"/>
+  <testcase name="shouldAbleToThrowExceptionIfMoreThanOneSpacesFoundInEndTheString()" classname="ScrabbleTest" time="0.004"/>
+  <testcase name="shouldAbleToThrowExceptionIfMoreThanOneSpacesFoundInTheString()" classname="ScrabbleTest" time="0.002"/>
+  <testcase name="shouldAbleToThrowExceptionIfInputISEmpty()" classname="ScrabbleTest" time="0.002"/>
+  <testcase name="shouldAbleToThrowExceptionIfOtherThanStringFound()" classname="ScrabbleTest" time="0.002"/>
+  <testcase name="shouldAbleToPerformForTheMoreString()" classname="ScrabbleTest" time="0.005"/>
+  <testcase name="shouldAbleTOStartTeGame()" classname="ScrabbleTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

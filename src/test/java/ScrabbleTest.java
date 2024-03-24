@@ -1,3 +1,6 @@
+import Exception.EmptyStringException;
+import Exception.OtherThanStringException;
+import models.Scrabble;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -63,5 +66,7 @@ public class ScrabbleTest {
         });
 
     }
+
+
 
 }
