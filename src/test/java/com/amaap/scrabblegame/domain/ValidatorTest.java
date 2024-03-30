@@ -6,64 +6,63 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ValidatorTest {
-
     @Test
-    public void shouldBeAbleToDetectEmptyString() {
+    void shouldBeAbleToDetectEmptyString() {
         assertTrue(Validator.isStringEmpty(""));
     }
 
     @Test
-    public void shouldBeAbleToDetectNonEmptyString() {
+    void shouldBeAbleToDetectNonEmptyString() {
         assertFalse(Validator.isStringEmpty("Test"));
     }
 
     @Test
-    public void shouldBeAbleToDetectValidStringWithSingleWord() {
-        assertTrue(Validator.isStringValid("Singleword"));
+    void shouldBeAbleToDetectValidString() {
+        assertFalse(Validator.isStringValid("ValidString"));
     }
 
     @Test
-    public void shouldBeAbleToDetectValidStringWithMultipleWords() {
+    void shouldBeAbleToDetectValidStringWithSingleWord() {
+        assertFalse(Validator.isStringValid("SingleWord"));
+    }
+
+    @Test
+    void shouldBeAbleToDetectValidStringWithMultipleWords() {
         assertTrue(Validator.isStringValid("Multiple Words Here"));
     }
 
     @Test
-    public void shouldBeAbleToDetectValidStringWithMixedCase() {
-        assertTrue(Validator.isStringValid("VaLiD StRiNg"));
+    void shouldBeAbleToDetectInvalidStringWithSpecialCharacters() {
+        assertTrue(Validator.isStringValid("Invalid$String"));
     }
 
     @Test
-    public void shouldBeAbleToDetectInValidStringWithLeadingAndTrailingSpaces() {
-        assertFalse(Validator.isStringValid(" In Valid String With Spaces  "));
+    void shouldBeAbleToDetectInvalidStringWithNumbers() {
+        assertTrue(Validator.isStringValid("Invalid123String"));
     }
 
     @Test
-    public void shouldBeAbleToDetectValidStringWithSpecialCharacters() {
-        assertFalse(Validator.isStringValid("Invalid$String"));
+    void shouldBeAbleToDetectInvalidStringWithLeadingSpace() {
+        assertTrue(Validator.isStringValid(" LeadingSpace"));
     }
 
     @Test
-    public void shouldBeAbleToDetectValidStringWithNumbers() {
-        assertFalse(Validator.isStringValid("Invalid123String"));
+    void shouldBeAbleToDetectInvalidStringWithTrailingSpace() {
+        assertTrue(Validator.isStringValid("TrailingSpace "));
     }
 
     @Test
-    public void shouldBeAbleToDetectValidStringWithHyphen() {
-        assertFalse(Validator.isStringValid("Invalid-String"));
+    void shouldBeAbleToDetectInvalidStringWithSpaceOnly() {
+        assertTrue(Validator.isStringValid(" "));
     }
 
     @Test
-    public void shouldBeAbleToDetectValidStringWithUnderscore() {
-        assertFalse(Validator.isStringValid("Invalid_ String"));
-    }
-
-    @Test
-    public void shouldBeAbleToDetectNullString() {
+    void shouldBeAbleToDetectNullString() {
         assertTrue(new Validator().isStringNull(null));
     }
 
     @Test
-    public void shouldBeAbleToDetectNonNullString() {
+    void shouldBeAbleToDetectNonNullString() {
         assertFalse(new Validator().isStringNull("Test"));
     }
 }

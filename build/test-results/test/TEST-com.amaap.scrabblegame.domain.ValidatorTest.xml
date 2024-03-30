@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.amaap.scrabblegame.domain.ValidatorTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2024-03-30T07:55:17" hostname="RAHULSLAPPY" time="0.171">
+<testsuite name="com.amaap.scrabblegame.domain.ValidatorTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2024-03-30T08:50:47" hostname="RAHULSLAPPY" time="0.079">
   <properties/>
-  <testcase name="shouldBeAbleToDetectValidStringWithMixedCase()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.088"/>
-  <testcase name="shouldBeAbleToDetectValidStringWithSpecialCharacters()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.003"/>
-  <testcase name="shouldBeAbleToDetectValidStringWithUnderscore()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.002"/>
-  <testcase name="shouldBeAbleToDetectNullString()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.001"/>
-  <testcase name="shouldBeAbleToDetectValidStringWithHyphen()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.005"/>
-  <testcase name="shouldBeAbleToDetectNonNullString()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.009"/>
-  <testcase name="shouldBeAbleToDetectValidStringWithMultipleWords()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.002"/>
-  <testcase name="shouldBeAbleToDetectValidStringWithNumbers()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.003"/>
-  <testcase name="shouldBeAbleToDetectInValidStringWithLeadingAndTrailingSpaces()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.004"/>
-  <testcase name="shouldBeAbleToDetectNonEmptyString()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.002"/>
-  <testcase name="shouldBeAbleToDetectValidStringWithSingleWord()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.001"/>
-  <testcase name="shouldBeAbleToDetectEmptyString()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.014"/>
+  <testcase name="shouldBeAbleToDetectInvalidStringWithSpecialCharacters()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.002"/>
+  <testcase name="shouldBeAbleToDetectInvalidStringWithLeadingSpace()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.001"/>
+  <testcase name="shouldBeAbleToDetectInvalidStringWithSpaceOnly()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.001"/>
+  <testcase name="shouldBeAbleToDetectValidString()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.013"/>
+  <testcase name="shouldBeAbleToDetectNullString()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.002"/>
+  <testcase name="shouldBeAbleToDetectNonNullString()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.002"/>
+  <testcase name="shouldBeAbleToDetectValidStringWithMultipleWords()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.003"/>
+  <testcase name="shouldBeAbleToDetectInvalidStringWithTrailingSpace()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.013"/>
+  <testcase name="shouldBeAbleToDetectInvalidStringWithNumbers()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.002"/>
+  <testcase name="shouldBeAbleToDetectNonEmptyString()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.005"/>
+  <testcase name="shouldBeAbleToDetectValidStringWithSingleWord()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.005"/>
+  <testcase name="shouldBeAbleToDetectEmptyString()" classname="com.amaap.scrabblegame.domain.ValidatorTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.amaap.scrabblegame.domain.TriplesTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-03-30T08:50:47" hostname="RAHULSLAPPY" time="0.029">
+  <properties/>
+  <testcase name="shouldBeAbleToThrowEmptyStringException()" classname="com.amaap.scrabblegame.domain.TriplesTest" time="0.005"/>
+  <testcase name="shouldBeAbleToThrowExceptionIfOtherThanStringIsGiven()" classname="com.amaap.scrabblegame.domain.TriplesTest" time="0.015"/>
+  <testcase name="shouldAbleToPerformForTripleTheWordAfterTheNormalScrabbleSum()" classname="com.amaap.scrabblegame.domain.TriplesTest" time="0.002"/>
+  <testcase name="shouldAbleToPerformForTripleTheLetterAfterTheNormalScrabbleSum()" classname="com.amaap.scrabblegame.domain.TriplesTest" time="0.001"/>
+  <testcase name="shouldAbleToPerformForTripleTheCompleteWordAfterTheNormalScrabbleSum()" classname="com.amaap.scrabblegame.domain.TriplesTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -5,6 +5,7 @@ import com.amaap.scrabblegame.domain.exception.InValidStringException;
 
 public class TripleCalculator extends ScoreCalculator {
     public int calculateForLetter(String originalWord, char letterToTriple) throws EmptyStringException, InValidStringException {
+
         int normalSum = getScore(originalWord);
         int doubledSum = normalSum;
 
@@ -19,7 +20,7 @@ public class TripleCalculator extends ScoreCalculator {
         if (word1.equals(word2)) {
             int normalSum = getScore(word1);
 
-            return normalSum * 3;
+            return (normalSum + normalSum * 3);
         }
 
         int normalSum1 = getScore(word1);

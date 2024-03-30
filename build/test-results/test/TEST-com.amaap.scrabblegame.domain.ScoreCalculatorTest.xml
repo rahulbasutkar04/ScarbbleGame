@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.amaap.scrabblegame.domain.ScoreCalculatorTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2024-03-30T08:50:47" hostname="RAHULSLAPPY" time="0.039">
+  <properties/>
+  <testcase name="shouldBeAbleToThrowExceptionIfInputIsEmpty()" classname="com.amaap.scrabblegame.domain.ScoreCalculatorTest" time="0.007"/>
+  <testcase name="shouldBeAbleToThrowExceptionIfNullIsPassed()" classname="com.amaap.scrabblegame.domain.ScoreCalculatorTest" time="0.004"/>
+  <testcase name="shouldBeAbleToStartTheGame()" classname="com.amaap.scrabblegame.domain.ScoreCalculatorTest" time="0.001"/>
+  <testcase name="shouldBeAbleToPerformForMoreThanOneString()" classname="com.amaap.scrabblegame.domain.ScoreCalculatorTest" time="0.002"/>
+  <testcase name="shouldBeAbleToThrowExceptionIfOtherThanStringFound()" classname="com.amaap.scrabblegame.domain.ScoreCalculatorTest" time="0.004"/>
+  <testcase name="shouldBeAbleToThrowExceptionIfMoreThanOneSpacesFoundInTheString()" classname="com.amaap.scrabblegame.domain.ScoreCalculatorTest" time="0.005"/>
+  <testcase name="shouldBeAbleToThrowExceptionIfMoreThanOneSpacesFoundInEndTheString()" classname="com.amaap.scrabblegame.domain.ScoreCalculatorTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

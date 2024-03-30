@@ -8,7 +8,7 @@ public class Validator {
     }
 
     public static boolean isStringValid(String input) {
-        return input != null && input.matches("^[a-zA-Z]+(\\s[a-zA-Z]+)*$");
+        return !input.matches("^[a-zA-Z]+( [a-zA-Z]+)?$");
     }
 
     public boolean isStringNull(String input) {

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ScoreCalculator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ScarbbleGame</a> &gt; <a href="index.source.html" class="el_package">com.amaap.scrabblegame.domain</a> &gt; <span class="el_source">ScoreCalculator.java</span></div><h1>ScoreCalculator.java</h1><pre class="source lang-java linenums">package com.amaap.scrabblegame.domain;
+
+import com.amaap.scrabblegame.configuration.PointAllocator;
+import com.amaap.scrabblegame.domain.exception.EmptyStringException;
+import com.amaap.scrabblegame.domain.exception.InValidStringException;
+
+<span class="fc" id="L7">public class ScoreCalculator {</span>
+<span class="fc" id="L8">    PointAllocator pointAllocator = new PointAllocator();</span>
+<span class="fc" id="L9">    Validator validator = new Validator();</span>
+
+<span class="fc" id="L11">    String[] letters = pointAllocator.getLetters();</span>
+<span class="fc" id="L12">    int[] points = pointAllocator.getPoints();</span>
+
+    public int getScore(String input) throws EmptyStringException, InValidStringException {
+<span class="fc" id="L15">        input = input.toUpperCase();</span>
+<span class="pc bpc" id="L16" title="1 of 2 branches missed.">        if (validator.isStringNull(input)) throw new NullPointerException(&quot;Input can not be null&quot;);</span>
+
+<span class="fc bfc" id="L18" title="All 2 branches covered.">        if (validator.isStringEmpty(input)) throw new EmptyStringException(&quot;Input can not be empty&quot;);</span>
+
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (validator.isStringValid(input)) throw new InValidStringException(&quot;Other than String found&quot;);</span>
+
+<span class="fc" id="L22">        int sum = 0;</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        for (int i = 0; i &lt; input.length(); i++) {</span>
+<span class="fc" id="L24">            char c = input.charAt(i);</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">            for (int j = 0; j &lt; letters.length; j++) {</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">                if (letters[j].contains(String.valueOf(c))) {</span>
+<span class="fc" id="L27">                    sum += points[j];</span>
+<span class="fc" id="L28">                    break;</span>
+                }
+            }
+        }
+<span class="fc" id="L32">        return sum;</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

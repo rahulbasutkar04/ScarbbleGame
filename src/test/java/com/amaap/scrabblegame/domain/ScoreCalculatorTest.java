@@ -11,56 +11,47 @@ class ScoreCalculatorTest {
     ScoreCalculator scoreCalculator = new ScoreCalculator();
 
     @Test
-    void shouldAbleToStartTeGame() throws EmptyStringException, InValidStringException {
-
+    void shouldBeAbleToStartTheGame() throws EmptyStringException, InValidStringException {
         int actual = scoreCalculator.getScore("RAHUL");
         assertEquals(8, actual);
     }
 
     @Test
-    void shouldAbleToThrowExceptionIfInputISEmpty() {
+    void shouldBeAbleToThrowExceptionIfInputIsEmpty() {
         assertThrows(EmptyStringException.class, () -> {
             scoreCalculator.getScore("");
         });
     }
 
     @Test
-    void shouldAbleToThrowExceptionIfOtherThanStringFound() {
-
+    void shouldBeAbleToThrowExceptionIfOtherThanStringFound() {
         assertThrows(InValidStringException.class, () -> {
             scoreCalculator.getScore("123raj");
         });
     }
 
     @Test
-    void shouldAbleToPerformForTheMoreString() throws EmptyStringException, InValidStringException {
-
+    void shouldBeAbleToPerformForMoreThanOneString() throws EmptyStringException, InValidStringException {
         int actual = scoreCalculator.getScore("Rahul Basutkar");
         assertEquals(22, actual);
-
     }
 
     @Test
-    void shouldAbleToThrowExceptionIfMoreThanOneSpacesFoundInTheString() {
-
+    void shouldBeAbleToThrowExceptionIfMoreThanOneSpacesFoundInTheString() {
         assertThrows(InValidStringException.class, () -> {
             scoreCalculator.getScore("rahul   basutkar");
         });
-
     }
 
     @Test
-    void shouldAbleToThrowExceptionIfMoreThanOneSpacesFoundInEndTheString() {
-
+    void shouldBeAbleToThrowExceptionIfMoreThanOneSpacesFoundInEndTheString() {
         assertThrows(InValidStringException.class, () -> {
             scoreCalculator.getScore("rahul  basutkar    ");
         });
-
     }
 
     @Test
     void shouldBeAbleToThrowExceptionIfNullIsPassed() {
-
         assertThrows(NullPointerException.class, () -> {
             scoreCalculator.getScore(null);
         });

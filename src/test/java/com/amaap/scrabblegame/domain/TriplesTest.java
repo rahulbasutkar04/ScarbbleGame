@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class TriplesTest {
 
     TripleCalculator triples = new TripleCalculator();
-
     @Test
     void shouldAbleToPerformForTripleTheLetterAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException {
 
@@ -28,6 +27,15 @@ class TriplesTest {
         int tripledScore = triples.calculateForWord("RAHUL", "HUL");
         // assert
         assertEquals(26, tripledScore);
+    }
+
+    @Test
+    void shouldAbleToPerformForTripleTheCompleteWordAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException {
+
+        // arrange & act
+        int tripledScore = triples.calculateForWord("RAHUL", "RAHUL");
+        // assert
+        assertEquals(32, tripledScore);
     }
 
     @Test
@@ -54,7 +62,6 @@ class TriplesTest {
 
     @Test
     void shouldBeAbleToThrowEmptyStringException() {
-
         assertThrows(EmptyStringException.class, () -> {
             triples.calculateForWord("", "rahul");
         });
