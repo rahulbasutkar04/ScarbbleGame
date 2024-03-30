@@ -1,7 +1,7 @@
-package models;
+package com.amaap.scrabblegame.domain;
 
 public class Doubles extends Operations {
-    public static int calculateForLetter(String originalWord, char letterToDouble) {
+    public  int calculateForLetter(String originalWord, char letterToDouble) {
         int normalSum = help(originalWord);
         int doubledSum = normalSum;
 
@@ -12,7 +12,7 @@ public class Doubles extends Operations {
         return (doubledSum * 2) + normalSum;
     }
 
-    public static int calculateForWord(String originalWord, String wordToDouble) {
+    public int calculateForWord(String originalWord, String wordToDouble) {
         int normalSum = help(originalWord);
         int doubledSum = normalSum;
 

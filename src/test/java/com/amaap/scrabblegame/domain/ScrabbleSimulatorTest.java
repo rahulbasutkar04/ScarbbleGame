@@ -1,21 +1,23 @@
+package com.amaap.scrabblegame.domain;
+
 import Exception.EmptyStringException;
 import Exception.OtherThanStringException;
-import models.Scrabble;
+import com.amaap.scrabblegame.domain.ScrabbleSimulator;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ScrabbleTest {
+public class ScrabbleSimulatorTest {
     @Test
     void shouldAbleTOCreateInstanceOfScrabbleClass() {
-        Scrabble scrabble = new Scrabble();
+        ScrabbleSimulator scrabble = new ScrabbleSimulator();
 
-        assertTrue(scrabble instanceof Scrabble);
+        assertTrue(scrabble instanceof ScrabbleSimulator);
     }
 
     @Test
     void shouldAbleTOStartTeGame() throws EmptyStringException, OtherThanStringException {
-        Scrabble scrabble = new Scrabble();
+        ScrabbleSimulator scrabble = new ScrabbleSimulator();
         int actual = scrabble.perform("RAHUL");
         assertEquals(8, actual);
     }
@@ -24,7 +26,7 @@ public class ScrabbleTest {
     void shouldAbleToThrowExceptionIfInputISEmpty()
     {
 
-        Scrabble scrabble = new Scrabble();
+        ScrabbleSimulator scrabble = new ScrabbleSimulator();
         assertThrows(EmptyStringException.class,()->{
            scrabble.perform("");
         });
@@ -32,7 +34,7 @@ public class ScrabbleTest {
 
     @Test
     void shouldAbleToThrowExceptionIfOtherThanStringFound(){
-        Scrabble scrabble = new Scrabble();
+        ScrabbleSimulator scrabble = new ScrabbleSimulator();
         assertThrows(OtherThanStringException.class,()->{
             scrabble.perform("123raj");
         });
@@ -40,7 +42,7 @@ public class ScrabbleTest {
 
     @Test
     void shouldAbleToPerformForTheMoreString() throws EmptyStringException, OtherThanStringException {
-        Scrabble scrabble=new Scrabble();
+        ScrabbleSimulator scrabble=new ScrabbleSimulator();
 
         int actaul=scrabble.perform("Rahul Basutkar");
         assertEquals(22,actaul);
@@ -50,7 +52,7 @@ public class ScrabbleTest {
     @Test
     void  shouldAbleToThrowExceptionIfMoreThanOneSpacesFoundInTheString(){
 
-        Scrabble scrabble = new Scrabble();
+        ScrabbleSimulator scrabble = new ScrabbleSimulator();
         assertThrows(OtherThanStringException.class,()->{
             scrabble.perform("rahul   basutkar");
         });
@@ -60,7 +62,7 @@ public class ScrabbleTest {
     @Test
     void  shouldAbleToThrowExceptionIfMoreThanOneSpacesFoundInEndTheString(){
 
-        Scrabble scrabble = new Scrabble();
+        ScrabbleSimulator scrabble = new ScrabbleSimulator();
         assertThrows(OtherThanStringException.class,()->{
             scrabble.perform("rahul  basutkar    ");
         });

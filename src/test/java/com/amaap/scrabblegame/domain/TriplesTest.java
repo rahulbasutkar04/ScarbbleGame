@@ -1,15 +1,17 @@
-package models;
+package com.amaap.scrabblegame.domain;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TriplesTest {
+
+    Triples triples=new Triples();
     @Test
     void shouldAbleToPerformForTripleTheLetterAfterTheNormalScrabbleSum() {
 
         // Arrange and Act
-        int tripledScore = Triples.calculateForLetter("RAHUL", 'A');
+        int tripledScore = triples.calculateForLetter("RAHUL", 'A');
 
         // Assert
         assertEquals(11, tripledScore);
@@ -18,7 +20,7 @@ class TriplesTest {
     @Test
     void shouldAbleToPerformForTripleTheWordAfterTheNormalScrabbleSum() {
         // Arrange and Act
-        int tripledScore = Triples.calculateForWord("RAHUL", "HUL");
+        int tripledScore = triples.calculateForWord("RAHUL", "HUL");
 
         // Assert
         assertEquals(26, tripledScore);

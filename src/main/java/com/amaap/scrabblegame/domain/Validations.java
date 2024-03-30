@@ -1,4 +1,4 @@
-package models;
+package com.amaap.scrabblegame.domain;
 
 public class Validations {
 
