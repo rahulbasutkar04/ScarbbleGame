@@ -1,6 +1,5 @@
 
-
-![image](https://github.com/rahulbasutkar04/ScarbbleGame/assets/115400916/c04b6b22-2d67-41d4-8322-1da7c237db53)
+![img.png](img.png)
 
 # SCRABBLE GAME
 

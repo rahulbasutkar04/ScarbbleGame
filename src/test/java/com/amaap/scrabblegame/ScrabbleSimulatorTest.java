@@ -3,6 +3,7 @@ package com.amaap.scrabblegame;
 
 import com.amaap.scrabblegame.domain.exception.EmptyStringException;
 import com.amaap.scrabblegame.domain.exception.InValidStringException;
+import com.amaap.scrabblegame.domain.exception.LetterNotPresentException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -40,7 +41,7 @@ public class ScrabbleSimulatorTest {
     }
 
     @Test
-    void shouldBeAbleToGetDoubleOfLetterWithTheStringSum() throws InValidStringException, EmptyStringException {
+    void shouldBeAbleToGetDoubleOfLetterWithTheStringSum() throws InValidStringException, EmptyStringException, LetterNotPresentException {
 
         // arrange & act
         int actual = scrabble.getDoubleScoreForLetter("Rahul", 'h');
@@ -63,7 +64,7 @@ public class ScrabbleSimulatorTest {
 
 
     @Test
-    void shouldBeAbleToGetTripleOfLetterWithTheStringSum() throws InValidStringException, EmptyStringException {
+    void shouldBeAbleToGetTripleOfLetterWithTheStringSum() throws InValidStringException, EmptyStringException, LetterNotPresentException {
 
         // arrange & act
         int actual = scrabble.getTripleScoreForLetter("Rahul", 'h');

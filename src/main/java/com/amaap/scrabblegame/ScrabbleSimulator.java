@@ -5,6 +5,7 @@ import com.amaap.scrabblegame.domain.ScoreCalculator;
 import com.amaap.scrabblegame.domain.TripleCalculator;
 import com.amaap.scrabblegame.domain.exception.EmptyStringException;
 import com.amaap.scrabblegame.domain.exception.InValidStringException;
+import com.amaap.scrabblegame.domain.exception.LetterNotPresentException;
 
 public class ScrabbleSimulator {
     ScoreCalculator operations = new ScoreCalculator();
@@ -26,7 +27,7 @@ public class ScrabbleSimulator {
     }
 
 
-    public int getDoubleScoreForLetter(String word, char letter) throws InValidStringException, EmptyStringException {
+    public int getDoubleScoreForLetter(String word, char letter) throws InValidStringException, EmptyStringException, LetterNotPresentException {
 
         return new DoubleCalculator().calculateForLetter(word, letter);
     }
@@ -35,7 +36,7 @@ public class ScrabbleSimulator {
         return new DoubleCalculator().calculateForWord(word, substring);
     }
 
-    public int getTripleScoreForLetter(String word, char letter) throws InValidStringException, EmptyStringException {
+    public int getTripleScoreForLetter(String word, char letter) throws InValidStringException, EmptyStringException, LetterNotPresentException {
         return new TripleCalculator().calculateForLetter(word, letter);
     }
 

@@ -2,31 +2,36 @@
 
 import com.amaap.scrabblegame.domain.exception.EmptyStringException;
 import com.amaap.scrabblegame.domain.exception.InValidStringException;
+import com.amaap.scrabblegame.domain.exception.LetterNotPresentException;
 
-<span class="fc" id="L6">public class TripleCalculator extends ScoreCalculator {</span>
-    public int calculateForLetter(String originalWord, char letterToTriple) throws EmptyStringException, InValidStringException {
+<span class="fc" id="L7">public class TripleCalculator extends ScoreCalculator {</span>
+    public int calculateForLetter(String originalWord, char letterToTriple) throws EmptyStringException, InValidStringException, LetterNotPresentException {
 
-<span class="fc" id="L9">        int normalSum = getScore(originalWord);</span>
-<span class="fc" id="L10">        int doubledSum = normalSum;</span>
+<span class="fc" id="L10">        int normalSum = getScore(originalWord);</span>
+        int tripledSum;
 
-<span class="pc bpc" id="L12" title="1 of 2 branches missed.">        if (originalWord.indexOf(letterToTriple) != -1) {</span>
-<span class="fc" id="L13">            doubledSum = getScore(&quot;&quot; + letterToTriple);</span>
+<span class="fc bfc" id="L13" title="All 2 branches covered.">        if (originalWord.indexOf(letterToTriple) != -1) {</span>
+<span class="fc" id="L14">            tripledSum = getScore(&quot;&quot; + letterToTriple);</span>
+        }
+        else {
+<span class="fc" id="L17">            throw new LetterNotPresentException(&quot;The letter '&quot; + letterToTriple + &quot;' is not present in the original word.&quot;);</span>
         }
 
-<span class="fc" id="L16">        return (doubledSum * 3) + normalSum;</span>
+
+<span class="fc" id="L21">        return (tripledSum * 3) + normalSum;</span>
     }
 
     public int calculateForWord(String word1, String word2) throws EmptyStringException, InValidStringException {
-<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (word1.equals(word2)) {</span>
-<span class="fc" id="L21">            int normalSum = getScore(word1);</span>
+<span class="fc bfc" id="L25" title="All 2 branches covered.">        if (word1.equals(word2)) {</span>
+<span class="fc" id="L26">            int normalSum = getScore(word1);</span>
 
-<span class="fc" id="L23">            return (normalSum + normalSum * 3);</span>
+<span class="fc" id="L28">            return (normalSum + normalSum * 3);</span>
         }
 
-<span class="fc" id="L26">        int normalSum1 = getScore(word1);</span>
-<span class="fc" id="L27">        int normalSum2 = getScore(word2);</span>
+<span class="fc" id="L31">        int normalSum1 = getScore(word1);</span>
+<span class="fc" id="L32">        int normalSum2 = getScore(word2);</span>
 
-<span class="fc" id="L29">        return normalSum1 + (normalSum2 * 3);</span>
+<span class="fc" id="L34">        return normalSum1 + (normalSum2 * 3);</span>
 
     }
 }

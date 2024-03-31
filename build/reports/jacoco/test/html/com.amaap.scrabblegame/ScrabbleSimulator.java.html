@@ -5,43 +5,44 @@ import com.amaap.scrabblegame.domain.ScoreCalculator;
 import com.amaap.scrabblegame.domain.TripleCalculator;
 import com.amaap.scrabblegame.domain.exception.EmptyStringException;
 import com.amaap.scrabblegame.domain.exception.InValidStringException;
+import com.amaap.scrabblegame.domain.exception.LetterNotPresentException;
 
-<span class="fc" id="L9">public class ScrabbleSimulator {</span>
-<span class="fc" id="L10">    ScoreCalculator operations = new ScoreCalculator();</span>
+<span class="fc" id="L10">public class ScrabbleSimulator {</span>
+<span class="fc" id="L11">    ScoreCalculator operations = new ScoreCalculator();</span>
 
     private static ScrabbleSimulator scrabbleSimulator;
 
     public static synchronized ScrabbleSimulator getInstance() {
-<span class="fc bfc" id="L15" title="All 2 branches covered.">        if (scrabbleSimulator == null)</span>
-<span class="fc" id="L16">            scrabbleSimulator = new ScrabbleSimulator();</span>
-<span class="fc" id="L17">        return scrabbleSimulator;</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">        if (scrabbleSimulator == null)</span>
+<span class="fc" id="L17">            scrabbleSimulator = new ScrabbleSimulator();</span>
+<span class="fc" id="L18">        return scrabbleSimulator;</span>
     }
 
 
     public int perform(String input) throws EmptyStringException, InValidStringException {
 
-<span class="fc" id="L23">        return operations.getScore(input.toUpperCase());</span>
+<span class="fc" id="L24">        return operations.getScore(input.toUpperCase());</span>
 
 
     }
 
 
-    public int getDoubleScoreForLetter(String word, char letter) throws InValidStringException, EmptyStringException {
+    public int getDoubleScoreForLetter(String word, char letter) throws InValidStringException, EmptyStringException, LetterNotPresentException {
 
-<span class="fc" id="L31">        return new DoubleCalculator().calculateForLetter(word, letter);</span>
+<span class="fc" id="L32">        return new DoubleCalculator().calculateForLetter(word, letter);</span>
     }
 
     public int getDoubleScoreForWord(String word, String substring) throws InValidStringException, EmptyStringException {
-<span class="fc" id="L35">        return new DoubleCalculator().calculateForWord(word, substring);</span>
+<span class="fc" id="L36">        return new DoubleCalculator().calculateForWord(word, substring);</span>
     }
 
-    public int getTripleScoreForLetter(String word, char letter) throws InValidStringException, EmptyStringException {
-<span class="fc" id="L39">        return new TripleCalculator().calculateForLetter(word, letter);</span>
+    public int getTripleScoreForLetter(String word, char letter) throws InValidStringException, EmptyStringException, LetterNotPresentException {
+<span class="fc" id="L40">        return new TripleCalculator().calculateForLetter(word, letter);</span>
     }
 
 
     public int getTripleScoreForWord(String word, String substring) throws InValidStringException, EmptyStringException {
-<span class="fc" id="L44">        return new TripleCalculator().calculateForWord(word, substring);</span>
+<span class="fc" id="L45">        return new TripleCalculator().calculateForWord(word, substring);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

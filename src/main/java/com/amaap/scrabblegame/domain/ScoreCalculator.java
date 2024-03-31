@@ -12,13 +12,19 @@ public class ScoreCalculator {
     int[] points = pointAllocator.getPoints();
 
     public int getScore(String input) throws EmptyStringException, InValidStringException {
+
+        if (validator.isStringNull(input)) {
+            throw new NullPointerException("Input can not be null");
+        }
+        if (validator.isStringEmpty(input)) {
+            throw new EmptyStringException("Input can not be empty");
+        }
+
+        if (validator.isStringValid(input)) {
+            throw new InValidStringException("Other than String found");
+        }
+
         input = input.toUpperCase();
-        if (validator.isStringNull(input)) throw new NullPointerException("Input can not be null");
-
-        if (validator.isStringEmpty(input)) throw new EmptyStringException("Input can not be empty");
-
-        if (validator.isStringValid(input)) throw new InValidStringException("Other than String found");
-
         int sum = 0;
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);

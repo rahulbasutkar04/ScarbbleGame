@@ -2,6 +2,7 @@ package com.amaap.scrabblegame.domain;
 
 import com.amaap.scrabblegame.domain.exception.EmptyStringException;
 import com.amaap.scrabblegame.domain.exception.InValidStringException;
+import com.amaap.scrabblegame.domain.exception.LetterNotPresentException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,7 +12,7 @@ class TriplesTest {
 
     TripleCalculator triples = new TripleCalculator();
     @Test
-    void shouldAbleToPerformForTripleTheLetterAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException {
+    void shouldAbleToPerformForTripleTheLetterAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException, LetterNotPresentException {
 
         // arrange and act
         int tripledScore = triples.calculateForLetter("RAHUL", 'A');
@@ -66,6 +67,13 @@ class TriplesTest {
     void shouldBeAbleToThrowEmptyStringException() {
         assertThrows(EmptyStringException.class, () -> {
             triples.calculateForWord("", "rahul");
+        });
+    }
+
+    @Test
+    void shouldBeAbleThrowLetterNotPresentExceptionWhenLetterToTripleIsNotPresent(){
+        assertThrows(LetterNotPresentException.class, () -> {
+            triples.calculateForLetter("RAHUL", 'Z');
         });
     }
 

@@ -6,54 +6,55 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ValidatorTest {
+    Validator validator=new Validator();
     @Test
     void shouldBeAbleToDetectEmptyString() {
-        assertTrue(Validator.isStringEmpty(""));
+        assertTrue(validator.isStringEmpty(""));
     }
 
     @Test
     void shouldBeAbleToDetectNonEmptyString() {
-        assertFalse(Validator.isStringEmpty("Test"));
+        assertFalse(validator.isStringEmpty("Test"));
     }
 
     @Test
     void shouldBeAbleToDetectValidString() {
-        assertFalse(Validator.isStringValid("ValidString"));
+        assertFalse(validator.isStringValid("ValidString"));
     }
 
     @Test
     void shouldBeAbleToDetectValidStringWithSingleWord() {
-        assertFalse(Validator.isStringValid("SingleWord"));
+        assertFalse(validator.isStringValid("SingleWord"));
     }
 
     @Test
     void shouldBeAbleToDetectValidStringWithMultipleWords() {
-        assertTrue(Validator.isStringValid("Multiple Words Here"));
+        assertTrue(validator.isStringValid("Multiple Words Here"));
     }
 
     @Test
     void shouldBeAbleToDetectInvalidStringWithSpecialCharacters() {
-        assertTrue(Validator.isStringValid("Invalid$String"));
+        assertTrue(validator.isStringValid("Invalid$String"));
     }
 
     @Test
     void shouldBeAbleToDetectInvalidStringWithNumbers() {
-        assertTrue(Validator.isStringValid("Invalid123String"));
+        assertTrue(validator.isStringValid("Invalid123String"));
     }
 
     @Test
     void shouldBeAbleToDetectInvalidStringWithLeadingSpace() {
-        assertTrue(Validator.isStringValid(" LeadingSpace"));
+        assertTrue(validator.isStringValid(" LeadingSpace"));
     }
 
     @Test
     void shouldBeAbleToDetectInvalidStringWithTrailingSpace() {
-        assertTrue(Validator.isStringValid("TrailingSpace "));
+        assertTrue(validator.isStringValid("TrailingSpace "));
     }
 
     @Test
     void shouldBeAbleToDetectInvalidStringWithSpaceOnly() {
-        assertTrue(Validator.isStringValid(" "));
+        assertTrue(validator.isStringValid(" "));
     }
 
     @Test

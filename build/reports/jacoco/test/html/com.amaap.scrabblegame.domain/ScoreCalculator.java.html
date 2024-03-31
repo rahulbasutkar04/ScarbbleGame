@@ -12,24 +12,30 @@ import com.amaap.scrabblegame.domain.exception.InValidStringException;
 <span class="fc" id="L12">    int[] points = pointAllocator.getPoints();</span>
 
     public int getScore(String input) throws EmptyStringException, InValidStringException {
-<span class="fc" id="L15">        input = input.toUpperCase();</span>
-<span class="pc bpc" id="L16" title="1 of 2 branches missed.">        if (validator.isStringNull(input)) throw new NullPointerException(&quot;Input can not be null&quot;);</span>
 
-<span class="fc bfc" id="L18" title="All 2 branches covered.">        if (validator.isStringEmpty(input)) throw new EmptyStringException(&quot;Input can not be empty&quot;);</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">        if (validator.isStringNull(input)) {</span>
+<span class="fc" id="L17">            throw new NullPointerException(&quot;Input can not be null&quot;);</span>
+        }
+<span class="fc bfc" id="L19" title="All 2 branches covered.">        if (validator.isStringEmpty(input)) {</span>
+<span class="fc" id="L20">            throw new EmptyStringException(&quot;Input can not be empty&quot;);</span>
+        }
 
-<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (validator.isStringValid(input)) throw new InValidStringException(&quot;Other than String found&quot;);</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (validator.isStringValid(input)) {</span>
+<span class="fc" id="L24">            throw new InValidStringException(&quot;Other than String found&quot;);</span>
+        }
 
-<span class="fc" id="L22">        int sum = 0;</span>
-<span class="fc bfc" id="L23" title="All 2 branches covered.">        for (int i = 0; i &lt; input.length(); i++) {</span>
-<span class="fc" id="L24">            char c = input.charAt(i);</span>
-<span class="fc bfc" id="L25" title="All 2 branches covered.">            for (int j = 0; j &lt; letters.length; j++) {</span>
-<span class="fc bfc" id="L26" title="All 2 branches covered.">                if (letters[j].contains(String.valueOf(c))) {</span>
-<span class="fc" id="L27">                    sum += points[j];</span>
-<span class="fc" id="L28">                    break;</span>
+<span class="fc" id="L27">        input = input.toUpperCase();</span>
+<span class="fc" id="L28">        int sum = 0;</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        for (int i = 0; i &lt; input.length(); i++) {</span>
+<span class="fc" id="L30">            char c = input.charAt(i);</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">            for (int j = 0; j &lt; letters.length; j++) {</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">                if (letters[j].contains(String.valueOf(c))) {</span>
+<span class="fc" id="L33">                    sum += points[j];</span>
+<span class="fc" id="L34">                    break;</span>
                 }
             }
         }
-<span class="fc" id="L32">        return sum;</span>
+<span class="fc" id="L38">        return sum;</span>
     }
 }
 

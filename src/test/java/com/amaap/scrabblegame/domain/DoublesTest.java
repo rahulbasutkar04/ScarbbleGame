@@ -2,6 +2,7 @@ package com.amaap.scrabblegame.domain;
 
 import com.amaap.scrabblegame.domain.exception.EmptyStringException;
 import com.amaap.scrabblegame.domain.exception.InValidStringException;
+import com.amaap.scrabblegame.domain.exception.LetterNotPresentException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,7 +13,7 @@ class DoublesTest {
     DoubleCalculator doubles = new DoubleCalculator();
 
     @Test
-    void shouldAbleToPerformForDoubleTheLetterAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException {
+    void shouldAbleToPerformForDoubleTheLetterAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException, LetterNotPresentException {
 
         // arrange & act
         int doubledScore = doubles.calculateForLetter("RAHUL", 'A');
@@ -65,6 +66,13 @@ class DoublesTest {
     void shouldBeAbleToThrowEmptyStringException() {
         assertThrows(EmptyStringException.class, () -> {
             doubles.calculateForWord("", "rahul");
+        });
+    }
+
+    @Test
+    void shouldBeAbleThrowLetterNotPresentExceptionWhenLetterToDoubleIsNotPresent(){
+        assertThrows(LetterNotPresentException.class, () -> {
+            doubles.calculateForLetter("RAHUL", 'Z');
         });
     }
 

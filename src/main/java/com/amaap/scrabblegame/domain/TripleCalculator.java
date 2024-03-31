@@ -2,18 +2,23 @@ package com.amaap.scrabblegame.domain;
 
 import com.amaap.scrabblegame.domain.exception.EmptyStringException;
 import com.amaap.scrabblegame.domain.exception.InValidStringException;
+import com.amaap.scrabblegame.domain.exception.LetterNotPresentException;
 
 public class TripleCalculator extends ScoreCalculator {
-    public int calculateForLetter(String originalWord, char letterToTriple) throws EmptyStringException, InValidStringException {
+    public int calculateForLetter(String originalWord, char letterToTriple) throws EmptyStringException, InValidStringException, LetterNotPresentException {
 
         int normalSum = getScore(originalWord);
-        int doubledSum = normalSum;
+        int tripledSum;
 
         if (originalWord.indexOf(letterToTriple) != -1) {
-            doubledSum = getScore("" + letterToTriple);
+            tripledSum = getScore("" + letterToTriple);
+        }
+        else {
+            throw new LetterNotPresentException("The letter '" + letterToTriple + "' is not present in the original word.");
         }
 
-        return (doubledSum * 3) + normalSum;
+
+        return (tripledSum * 3) + normalSum;
     }
 
     public int calculateForWord(String word1, String word2) throws EmptyStringException, InValidStringException {

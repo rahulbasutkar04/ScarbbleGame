@@ -17,6 +17,13 @@ class ScoreCalculatorTest {
     }
 
     @Test
+    void shouldBeAbleToThrowExceptionIfNullIsPassed() {
+        assertThrows(NullPointerException.class, () -> {
+            scoreCalculator.getScore(null);
+        });
+    }
+
+    @Test
     void shouldBeAbleToThrowExceptionIfInputIsEmpty() {
         assertThrows(EmptyStringException.class, () -> {
             scoreCalculator.getScore("");
@@ -50,11 +57,6 @@ class ScoreCalculatorTest {
         });
     }
 
-    @Test
-    void shouldBeAbleToThrowExceptionIfNullIsPassed() {
-        assertThrows(NullPointerException.class, () -> {
-            scoreCalculator.getScore(null);
-        });
-    }
+
 
 }
