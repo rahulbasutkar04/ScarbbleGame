@@ -6,7 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ValidatorTest {
-    Validator validator=new Validator();
+    Validator validator = new Validator();
+
     @Test
     void shouldBeAbleToDetectEmptyString() {
         assertTrue(validator.isStringEmpty(""));

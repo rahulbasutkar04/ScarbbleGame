@@ -12,8 +12,7 @@ public class TripleCalculator extends ScoreCalculator {
 
         if (originalWord.indexOf(letterToTriple) != -1) {
             tripledSum = getScore("" + letterToTriple);
-        }
-        else {
+        } else {
             throw new LetterNotPresentException("The letter '" + letterToTriple + "' is not present in the original word.");
         }
 

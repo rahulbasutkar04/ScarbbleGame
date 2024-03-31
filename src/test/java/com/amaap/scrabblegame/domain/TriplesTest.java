@@ -11,8 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class TriplesTest {
 
     TripleCalculator triples = new TripleCalculator();
+
     @Test
-    void shouldAbleToPerformForTripleTheLetterAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException, LetterNotPresentException {
+    void shouldBeAbleToPerformForTripleTheLetterAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException, LetterNotPresentException {
 
         // arrange and act
         int tripledScore = triples.calculateForLetter("RAHUL", 'A');
@@ -22,7 +23,7 @@ class TriplesTest {
     }
 
     @Test
-    void shouldAbleToPerformForTripleTheWordAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException {
+    void shouldBeAbleToPerformForTripleTheWordAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException {
 
         // arrange & act
         int tripledScore = triples.calculateForWord("RAHUL", "HUL");
@@ -32,7 +33,7 @@ class TriplesTest {
     }
 
     @Test
-    void shouldAbleToPerformForTripleTheCompleteWordAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException {
+    void shouldBeAbleToPerformForTripleTheCompleteWordAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException {
 
         // arrange & act
         int tripledScore = triples.calculateForWord("RAHUL", "RAHUL");
@@ -71,7 +72,7 @@ class TriplesTest {
     }
 
     @Test
-    void shouldBeAbleThrowLetterNotPresentExceptionWhenLetterToTripleIsNotPresent(){
+    void shouldBeAbleThrowLetterNotPresentExceptionWhenLetterToTripleIsNotPresent() {
         assertThrows(LetterNotPresentException.class, () -> {
             triples.calculateForLetter("RAHUL", 'Z');
         });

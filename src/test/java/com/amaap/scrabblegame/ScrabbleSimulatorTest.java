@@ -13,10 +13,9 @@ public class ScrabbleSimulatorTest {
     ScrabbleSimulator scrabble = ScrabbleSimulator.getInstance();
 
     @Test
-    void shouldAbleTOCreateInstanceOfScrabbleClass() {
+    void shouldBeAbleTOCreateInstanceOfScrabbleClass() {
         assertTrue(scrabble instanceof ScrabbleSimulator);
     }
-
 
     @Test
     void shouldBeAbleToGetSingleInstance() {
@@ -31,7 +30,7 @@ public class ScrabbleSimulatorTest {
     }
 
     @Test
-    void shouldAbleToGetScoreOfGivenOneString() throws EmptyStringException, InValidStringException {
+    void shouldBeAbleToGetScoreOfGivenOneString() throws EmptyStringException, InValidStringException {
 
         // arrange & act
         int actual = scrabble.perform("Rahul Basutkar");
@@ -62,7 +61,6 @@ public class ScrabbleSimulatorTest {
 
     }
 
-
     @Test
     void shouldBeAbleToGetTripleOfLetterWithTheStringSum() throws InValidStringException, EmptyStringException, LetterNotPresentException {
 
@@ -83,6 +81,5 @@ public class ScrabbleSimulatorTest {
         assertEquals(26, actual);
 
     }
-
 
 }

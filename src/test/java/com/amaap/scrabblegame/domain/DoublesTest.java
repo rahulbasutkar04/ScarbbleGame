@@ -13,7 +13,7 @@ class DoublesTest {
     DoubleCalculator doubles = new DoubleCalculator();
 
     @Test
-    void shouldAbleToPerformForDoubleTheLetterAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException, LetterNotPresentException {
+    void shouldBeAbleToPerformForDoubleTheLetterAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException, LetterNotPresentException {
 
         // arrange & act
         int doubledScore = doubles.calculateForLetter("RAHUL", 'A');
@@ -24,7 +24,7 @@ class DoublesTest {
     }
 
     @Test
-    void shouldAbleToPerformForDoubleTheWordAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException {
+    void shouldBeAbleToPerformForDoubleTheWordAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException {
 
         // arrange & act
         int doubledScore = doubles.calculateForWord("RAHUL", "HUL");
@@ -34,7 +34,7 @@ class DoublesTest {
     }
 
     @Test
-    void shouldAbleToPerformForCompleteDoubleTheWordAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException {
+    void shouldBeAbleToPerformForCompleteDoubleTheWordAfterTheNormalScrabbleSum() throws EmptyStringException, InValidStringException {
 
         // arrange & act
         int doubledScore = doubles.calculateForWord("RAHUL", "RAHUL");
@@ -70,7 +70,7 @@ class DoublesTest {
     }
 
     @Test
-    void shouldBeAbleThrowLetterNotPresentExceptionWhenLetterToDoubleIsNotPresent(){
+    void shouldBeAbleThrowLetterNotPresentExceptionWhenLetterToDoubleIsNotPresent() {
         assertThrows(LetterNotPresentException.class, () -> {
             doubles.calculateForLetter("RAHUL", 'Z');
         });

@@ -17,15 +17,10 @@ public class ScrabbleSimulator {
             scrabbleSimulator = new ScrabbleSimulator();
         return scrabbleSimulator;
     }
-
-
     public int perform(String input) throws EmptyStringException, InValidStringException {
-
         return operations.getScore(input.toUpperCase());
 
-
     }
-
 
     public int getDoubleScoreForLetter(String word, char letter) throws InValidStringException, EmptyStringException, LetterNotPresentException {
 
@@ -39,7 +34,6 @@ public class ScrabbleSimulator {
     public int getTripleScoreForLetter(String word, char letter) throws InValidStringException, EmptyStringException, LetterNotPresentException {
         return new TripleCalculator().calculateForLetter(word, letter);
     }
-
 
     public int getTripleScoreForWord(String word, String substring) throws InValidStringException, EmptyStringException {
         return new TripleCalculator().calculateForWord(word, substring);

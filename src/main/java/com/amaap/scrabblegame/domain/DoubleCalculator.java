@@ -11,8 +11,7 @@ public class DoubleCalculator extends ScoreCalculator {
 
         if (originalWord.indexOf(letterToDouble) != -1) {
             doubledSum = getScore("" + letterToDouble);
-        }
-        else {
+        } else {
             throw new LetterNotPresentException("The letter '" + letterToDouble + "' is not present in the original word.");
         }
 
