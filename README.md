@@ -11,15 +11,15 @@
 - `sum`: An integer 
 
 ## Behaviors:
-- `validateInput()`: Public method
-- `perform()`: Public method
-- `scoreCalculator()`: Private method
-- `InputExceptions()`: Public method
-
-## Extended Features:
-
+- `validator()`: Public method
+- `getScore()`: Public method
+- `calculateForLetter()`: public method
+- `calculateForWord()`: public method
+- 
 ### Classes:
+- `PointAllocator`: Public class
 - `Operations`: Public class
-- `Doubles`: Public class (Inherited from `Operations`)
-- `Triples`: Public class (Inherited from `Operations`)
-
+- `DoubleCalculator`: Public class (Inherited from `Operations`)
+- `TripleCalculator`: Public class (Inherited from `Operations`)
+- `Validator`: public class 
+- `SrabbleSimulator`:public class

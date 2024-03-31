@@ -70,7 +70,6 @@ public class ScrabbleSimulatorTest {
 
         // assert
         assertEquals(20, actual);
-
     }
 
     @Test

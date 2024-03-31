@@ -17,7 +17,7 @@ class DoublesTest {
         // arrange & act
         int doubledScore = doubles.calculateForLetter("RAHUL", 'A');
 
-        // Assert
+        // assert
         assertEquals(10, doubledScore);
 
     }
@@ -28,7 +28,7 @@ class DoublesTest {
         // arrange & act
         int doubledScore = doubles.calculateForWord("RAHUL", "HUL");
 
-        // Assert
+        // assert
         assertEquals(14, doubledScore);
     }
 

@@ -25,6 +25,7 @@ class TriplesTest {
 
         // arrange & act
         int tripledScore = triples.calculateForWord("RAHUL", "HUL");
+
         // assert
         assertEquals(26, tripledScore);
     }
@@ -34,6 +35,7 @@ class TriplesTest {
 
         // arrange & act
         int tripledScore = triples.calculateForWord("RAHUL", "RAHUL");
+
         // assert
         assertEquals(32, tripledScore);
     }
