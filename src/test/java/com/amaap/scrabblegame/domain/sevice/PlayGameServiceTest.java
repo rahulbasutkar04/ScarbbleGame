@@ -11,15 +11,15 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PlayGameTest {
+class PlayGameServiceTest {
 
-    private PlayGame playGame;
+    private PlayGameService playGameService;
     private GameScoreRepository gameScoreRepository;
 
     @BeforeEach
     void setUp() {
         gameScoreRepository = new InMemoryGameScoreRepository();
-        playGame = new PlayGame(gameScoreRepository);
+        playGameService = new PlayGameService(gameScoreRepository);
     }
 
     @Test
@@ -29,7 +29,7 @@ class PlayGameTest {
         letterOfTilesOfEachPlayer.put(1, "RABHUTE");
 
         // act
-        assertDoesNotThrow(() -> playGame.play(letterOfTilesOfEachPlayer));
+        assertDoesNotThrow(() -> playGameService.play(letterOfTilesOfEachPlayer));
 
         // Assert
         assertEquals(1, gameScoreRepository.getPlayerData().size());
@@ -42,7 +42,7 @@ class PlayGameTest {
         String rack = "RABHUTE";
 
         // act
-        boolean isValid = playGame.isValidInput(input, rack);
+        boolean isValid = playGameService.isValidInput(input, rack);
 
         // assert
         assertEquals(true, isValid);
@@ -55,7 +55,7 @@ class PlayGameTest {
         String rack = "RABHUTE";
 
         // act & assert
-        assertThrows(InvalidInputException.class, () -> playGame.isValidInput(input, rack));
+        assertThrows(InvalidInputException.class, () -> playGameService.isValidInput(input, rack));
     }
 
     @Test
@@ -65,7 +65,7 @@ class PlayGameTest {
         String usedLetters = "RAB";
 
         // act
-        String updatedRack = playGame.updateRack(rack, usedLetters);
+        String updatedRack = playGameService.updateRack(rack, usedLetters);
 
         // assert
         assertEquals("HUTE", updatedRack);

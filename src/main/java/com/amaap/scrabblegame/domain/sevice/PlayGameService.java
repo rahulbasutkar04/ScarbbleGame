@@ -9,14 +9,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class PlayGame {
+public class PlayGameService {
 
     private final GameScoreRepository gameScoreRepository;
     ScoringService scoringService = new ScoringService(new ScrabbleScoreCalculator());
     PlayerInteractionService playerInteractionService = new PlayerInteractionService(new Scanner(System.in));
 
     @Inject
-    public PlayGame(GameScoreRepository gameScoreRepository) {
+    public PlayGameService(GameScoreRepository gameScoreRepository) {
         this.gameScoreRepository = gameScoreRepository;
     }
 

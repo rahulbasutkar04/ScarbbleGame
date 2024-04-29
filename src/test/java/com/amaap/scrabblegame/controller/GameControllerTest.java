@@ -2,7 +2,7 @@ package com.amaap.scrabblegame.controller;
 
 import com.amaap.scrabblegame.controller.dto.Http;
 import com.amaap.scrabblegame.controller.dto.Response;
-import com.amaap.scrabblegame.domain.sevice.GameInitializer;
+import com.amaap.scrabblegame.domain.sevice.GameInitializerService;
 import com.amaap.scrabblegame.repository.GameScoreRepository;
 import com.amaap.scrabblegame.repository.PlayerRepository;
 import com.amaap.scrabblegame.repository.impl.InMemoryGameScoreRepository;
@@ -25,8 +25,8 @@ class GameControllerTest {
             PlayerController playerController=new PlayerController(playerService);
             playerController.createPlayer(1);
             GameScoreRepository gameScoreRepository = new InMemoryGameScoreRepository();
-            GameInitializer gameInitializer = new GameInitializer((InMemoryGameScoreRepository) gameScoreRepository);
-            GameService gameService = new GameService(gameScoreRepository, gameInitializer);
+            GameInitializerService gameInitializerService = new GameInitializerService((InMemoryGameScoreRepository) gameScoreRepository);
+            GameService gameService = new GameService(gameScoreRepository, gameInitializerService);
             GameController gameController = new GameController(playerRepository, gameService);
 
            // act
@@ -46,8 +46,8 @@ class GameControllerTest {
         PlayerController playerController=new PlayerController(playerService);
         playerController.createPlayer(0);
         GameScoreRepository gameScoreRepository = new InMemoryGameScoreRepository();
-        GameInitializer gameInitializer = new GameInitializer((InMemoryGameScoreRepository) gameScoreRepository);
-        GameService gameService = new GameService(gameScoreRepository, gameInitializer);
+        GameInitializerService gameInitializerService = new GameInitializerService((InMemoryGameScoreRepository) gameScoreRepository);
+        GameService gameService = new GameService(gameScoreRepository, gameInitializerService);
         GameController gameController = new GameController(playerRepository, gameService);
 
         // act

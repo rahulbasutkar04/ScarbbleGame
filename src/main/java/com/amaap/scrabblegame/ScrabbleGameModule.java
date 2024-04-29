@@ -1,6 +1,6 @@
 package com.amaap.scrabblegame;
 
-import com.amaap.scrabblegame.domain.sevice.GameInitializer;
+import com.amaap.scrabblegame.domain.sevice.GameInitializerService;
 import com.amaap.scrabblegame.domain.sevice.ScrabbleCalculator;
 import com.amaap.scrabblegame.domain.sevice.impl.ScrabbleScoreCalculator;
 import com.amaap.scrabblegame.repository.GameScoreRepository;
@@ -16,7 +16,7 @@ public class ScrabbleGameModule extends AbstractModule {
         bind(PlayerRepository.class).to(InMemoryPlayerRepository.class);
         bind(ScrabbleCalculator.class).to(ScrabbleScoreCalculator.class);
         bind(GameScoreRepository.class).to(InMemoryGameScoreRepository.class);
-        bind(GameInitializer.class).toInstance(new GameInitializer(new InMemoryGameScoreRepository()));
+        bind(GameInitializerService.class).toInstance(new GameInitializerService(new InMemoryGameScoreRepository()));
         bind(GameService.class);
     }
 }

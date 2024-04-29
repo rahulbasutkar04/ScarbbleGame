@@ -13,14 +13,14 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-class GameInitializerTest {
+class GameInitializerServiceTest {
 
-    private GameInitializer gameInitializer;
+    private GameInitializerService gameInitializerService;
 
     @BeforeEach
     void setUp() {
         InMemoryGameScoreRepository gameScoreRepository = new InMemoryGameScoreRepository();
-        gameInitializer = new GameInitializer(gameScoreRepository);
+        gameInitializerService = new GameInitializerService(gameScoreRepository);
     }
 
     @Test
@@ -31,8 +31,8 @@ class GameInitializerTest {
         playerIds.add(2);
 
         // act
-        gameInitializer.startGameService(playerIds);
-        Map<Integer, String> actual = gameInitializer.letterOfTilesOfEachPlayer;
+        gameInitializerService.startGameService(playerIds);
+        Map<Integer, String> actual = gameInitializerService.letterOfTilesOfEachPlayer;
 
         // assert
         assertEquals(2, actual.size());
@@ -45,7 +45,7 @@ class GameInitializerTest {
         List<Integer> playerIds = new ArrayList<>();
 
         // act
-        boolean result = gameInitializer.startGameService(playerIds);
+        boolean result = gameInitializerService.startGameService(playerIds);
 
         // assert
         assertFalse(result);

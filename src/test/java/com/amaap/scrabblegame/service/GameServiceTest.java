@@ -1,6 +1,6 @@
 package com.amaap.scrabblegame.service;
 
-import com.amaap.scrabblegame.domain.sevice.GameInitializer;
+import com.amaap.scrabblegame.domain.sevice.GameInitializerService;
 import com.amaap.scrabblegame.repository.GameScoreRepository;
 import com.amaap.scrabblegame.repository.impl.InMemoryGameScoreRepository;
 import com.amaap.scrabblegame.service.exception.InvalidInputException;
@@ -20,9 +20,9 @@ class GameServiceTest {
     @BeforeEach
     void setUp() {
         InMemoryGameScoreRepository inMemoryGameScoreRepository = new InMemoryGameScoreRepository();
-        GameInitializer gameInitializer = new GameInitializer(inMemoryGameScoreRepository);
+        GameInitializerService gameInitializerService = new GameInitializerService(inMemoryGameScoreRepository);
         GameScoreRepository gameScoreRepository = new InMemoryGameScoreRepository();
-        gameService = new GameService(gameScoreRepository, gameInitializer);
+        gameService = new GameService(gameScoreRepository, gameInitializerService);
     }
 
     @Test
