@@ -21,4 +21,8 @@ public class Response {
     public int hashCode() {
         return Objects.hash(status);
     }
+
+    public Http getStatus() {
+        return status;
+    }
 }

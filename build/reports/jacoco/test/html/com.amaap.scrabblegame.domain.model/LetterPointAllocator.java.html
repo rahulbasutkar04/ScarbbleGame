@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LetterPointAllocator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ScarbbleGame</a> &gt; <a href="index.source.html" class="el_package">com.amaap.scrabblegame.domain.model</a> &gt; <span class="el_source">LetterPointAllocator.java</span></div><h1>LetterPointAllocator.java</h1><pre class="source lang-java linenums">package com.amaap.scrabblegame.domain.model;
+
+<span class="fc" id="L3">public class LetterPointAllocator {</span>
+
+    public int getPoint(char c) {
+
+<span class="fc bfc" id="L7" title="All 8 branches covered.">        switch (c) {</span>
+            case 'A': case 'E': case 'I': case 'O': case 'N':
+            case 'R': case 'T': case 'L': case 'S': case 'U':
+<span class="fc" id="L10">                return 1;</span>
+            case 'D': case 'G':
+<span class="fc" id="L12">                return 2;</span>
+            case 'B': case 'C': case 'M': case 'P':
+<span class="fc" id="L14">                return 3;</span>
+            case 'F': case 'H': case 'V': case 'W': case 'Y':
+<span class="fc" id="L16">                return 4;</span>
+            case 'K':
+<span class="fc" id="L18">                return 5;</span>
+            case 'J': case 'X':
+<span class="fc" id="L20">                return 8;</span>
+            case 'Q': case 'Z':
+<span class="fc" id="L22">                return 10;</span>
+            default:
+<span class="fc" id="L24">                return 0;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

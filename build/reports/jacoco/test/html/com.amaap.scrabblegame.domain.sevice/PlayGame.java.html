@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PlayGame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ScarbbleGame</a> &gt; <a href="index.source.html" class="el_package">com.amaap.scrabblegame.domain.sevice</a> &gt; <span class="el_source">PlayGame.java</span></div><h1>PlayGame.java</h1><pre class="source lang-java linenums">package com.amaap.scrabblegame.domain.sevice;
+
+import com.amaap.scrabblegame.domain.sevice.impl.ScrabbleScoreCalculator;
+import com.amaap.scrabblegame.repository.GameScoreRepository;
+import com.amaap.scrabblegame.service.exception.InvalidInputException;
+import com.google.inject.Inject;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class PlayGame {
+
+    private final GameScoreRepository gameScoreRepository;
+<span class="fc" id="L15">    ScoringService scoringService = new ScoringService(new ScrabbleScoreCalculator());</span>
+<span class="fc" id="L16">    PlayerInteractionService playerInteractionService = new PlayerInteractionService(new Scanner(System.in));</span>
+
+    @Inject
+<span class="fc" id="L19">    public PlayGame(GameScoreRepository gameScoreRepository) {</span>
+<span class="fc" id="L20">        this.gameScoreRepository = gameScoreRepository;</span>
+<span class="fc" id="L21">    }</span>
+
+    public void play(Map&lt;Integer, String&gt; letterOfTilesOfEachPlayer) throws InvalidInputException {
+<span class="fc" id="L24">        boolean continuePlaying = true;</span>
+
+<span class="fc" id="L26">        Map&lt;Integer, Integer&gt; playerScores = new HashMap&lt;&gt;();</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        for (int playerId : letterOfTilesOfEachPlayer.keySet()) {</span>
+<span class="fc" id="L28">            playerScores.put(playerId, 0);</span>
+<span class="fc" id="L29">        }</span>
+
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        while (continuePlaying) {</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">            for (Map.Entry&lt;Integer, String&gt; entry : letterOfTilesOfEachPlayer.entrySet()) {</span>
+<span class="fc" id="L33">                int playerId = entry.getKey();</span>
+<span class="fc" id="L34">                String tiles = entry.getValue();</span>
+<span class="fc" id="L35">                System.out.println(&quot;Player ID: &quot; + playerId + &quot;, Tiles: &quot; + tiles);</span>
+
+<span class="fc" id="L37">                String userInput=&quot;&quot;;</span>
+<span class="fc" id="L38">                boolean validInput = false;</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">                while (!validInput) {</span>
+<span class="fc" id="L40">                    System.out.println(&quot;Enter a word using the letters in the rack: &quot;);</span>
+
+                  //  userInput = playerInteractionService.takeUserInputAsString();
+<span class="fc" id="L43">                    userInput=&quot;RAB&quot;;</span>
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">                    if (isValidInput(userInput, tiles)) {</span>
+<span class="fc" id="L45">                        validInput = true;</span>
+                    } else {
+<span class="nc" id="L47">                        System.out.println(&quot;Invalid input. The word contains letters not in the rack.&quot;);</span>
+                    }
+                }
+
+<span class="fc" id="L51">                int totalSum = scoringService.calculateScrabble(userInput);</span>
+
+<span class="fc" id="L53">                int oldScore = playerScores.get(playerId);</span>
+
+<span class="fc" id="L55">                int newScore = oldScore + totalSum;</span>
+
+<span class="fc" id="L57">                playerScores.put(playerId, newScore);</span>
+
+<span class="fc" id="L59">                String remainingTiles = updateRack(tiles, userInput);</span>
+
+<span class="fc" id="L61">                letterOfTilesOfEachPlayer.put(playerId, remainingTiles);</span>
+
+<span class="fc" id="L63">                System.out.println(&quot;Remaining letters in the rack: &quot; + remainingTiles);</span>
+<span class="fc" id="L64">            }</span>
+
+<span class="fc" id="L66">            printPlayerScores(playerScores);</span>
+
+<span class="fc" id="L68">            System.out.println(&quot;Do you want to continue playing? (yes/no): &quot;);</span>
+           // String decision = playerInteractionService.takeUserInputAsString();
+<span class="fc" id="L70">            String decision=&quot;no&quot;;</span>
+<span class="pc bpc" id="L71" title="1 of 2 branches missed.">            if (!decision.equalsIgnoreCase(&quot;yes&quot;)) {</span>
+<span class="fc" id="L72">                continuePlaying = false;</span>
+<span class="fc bfc" id="L73" title="All 2 branches covered.">                if (playerScores.size() &gt; 1) {</span>
+<span class="fc" id="L74">                    int maxScore = Integer.MIN_VALUE;</span>
+<span class="fc" id="L75">                    int maxScorePlayer = -1;</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">                    for (Map.Entry&lt;Integer, Integer&gt; entry : playerScores.entrySet()) {</span>
+<span class="fc bfc" id="L77" title="All 2 branches covered.">                        if (entry.getValue() &gt; maxScore) {</span>
+<span class="fc" id="L78">                            maxScore = entry.getValue();</span>
+<span class="fc" id="L79">                            maxScorePlayer = entry.getKey();</span>
+                        }
+<span class="fc" id="L81">                    }</span>
+<span class="fc" id="L82">                    System.out.println(&quot;Player &quot; + maxScorePlayer + &quot; is the winner with the highest score: &quot; + maxScore);</span>
+                }
+            }
+<span class="fc" id="L85">        }</span>
+
+<span class="fc" id="L87">        storeScores(playerScores);</span>
+<span class="fc" id="L88">    }</span>
+
+    public boolean isValidInput(String input, String rack) throws InvalidInputException {
+<span class="pc bpc" id="L91" title="2 of 4 branches missed.">        if (input == null || input.trim().isEmpty()) {</span>
+<span class="nc" id="L92">            throw new InvalidInputException(&quot;Input is null or empty.&quot;);</span>
+        }
+
+<span class="fc" id="L95">        Map&lt;Character, Integer&gt; rackLettersCount = new HashMap&lt;&gt;();</span>
+
+<span class="fc bfc" id="L97" title="All 2 branches covered.">        for (char c : rack.toCharArray()) {</span>
+<span class="fc" id="L98">            rackLettersCount.put(c, rackLettersCount.getOrDefault(c, 0) + 1);</span>
+        }
+
+<span class="fc bfc" id="L101" title="All 2 branches covered.">        for (char c : input.toCharArray()) {</span>
+<span class="pc bpc" id="L102" title="1 of 2 branches missed.">            if (!Character.isLetter(c)) {</span>
+<span class="nc" id="L103">                throw new InvalidInputException(&quot;Input contains non-alphabetic characters: &quot; + c);</span>
+            }
+
+<span class="pc bpc" id="L106" title="1 of 4 branches missed.">            if (!rackLettersCount.containsKey(c) || rackLettersCount.get(c) &lt;= 0) {</span>
+<span class="fc" id="L107">                throw new InvalidInputException(&quot;Input contains invalid character: &quot; + c);</span>
+            }
+<span class="fc" id="L109">            rackLettersCount.put(c, rackLettersCount.get(c) - 1);</span>
+        }
+
+<span class="fc" id="L112">        return true;</span>
+    }
+
+
+
+    public String updateRack(String rack, String usedLetters) {
+<span class="fc" id="L118">        StringBuilder updatedRack = new StringBuilder(rack);</span>
+<span class="fc bfc" id="L119" title="All 2 branches covered.">        for (char c : usedLetters.toCharArray()) {</span>
+<span class="fc" id="L120">            int index = updatedRack.indexOf(String.valueOf(c));</span>
+<span class="pc bpc" id="L121" title="1 of 2 branches missed.">            if (index != -1) {</span>
+<span class="fc" id="L122">                updatedRack.deleteCharAt(index);</span>
+            }
+        }
+<span class="fc" id="L125">        return updatedRack.toString();</span>
+    }
+
+    void printPlayerScores(Map&lt;Integer, Integer&gt; playerScores) {
+<span class="fc bfc" id="L129" title="All 2 branches covered.">        for (Map.Entry&lt;Integer, Integer&gt; entry : playerScores.entrySet()) {</span>
+<span class="fc" id="L130">            System.out.println(&quot;Player &quot; + entry.getKey() + &quot; Score: &quot; + entry.getValue());</span>
+<span class="fc" id="L131">        }</span>
+<span class="fc" id="L132">    }</span>
+
+    void storeScores(Map&lt;Integer, Integer&gt; playerScores) {
+<span class="fc bfc" id="L135" title="All 2 branches covered.">        for (Map.Entry&lt;Integer, Integer&gt; entry : playerScores.entrySet()) {</span>
+<span class="fc" id="L136">            gameScoreRepository.insertToScoreTable(entry.getKey(), entry.getValue());</span>
+<span class="fc" id="L137">        }</span>
+<span class="fc" id="L138">    }</span>
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -3,11 +3,9 @@ package com.amaap.scrabblegame.repository;
 import com.amaap.scrabblegame.repository.impl.InMemoryPlayerRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 public class InMemoryPlayerRepositoryTest {
 
     private InMemoryPlayerRepository repository;

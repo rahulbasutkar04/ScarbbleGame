@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.amaap.scrabblegame.domain.sevice.TripleCalculatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-04-29T16:48:21" hostname="RAHULSLAPPY" time="0.005">
+  <properties/>
+  <testcase name="shouldBeAbleToTripleTheLetter()" classname="com.amaap.scrabblegame.domain.sevice.TripleCalculatorTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface PlayerRepository {
 
-      void insertPlayer(int id);
+    void insertPlayer(int id);
 
-      List<Integer> getPlayerId();
+    List<Integer> getPlayerId();
 }

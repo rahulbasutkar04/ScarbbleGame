@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PlayerController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ScarbbleGame</a> &gt; <a href="index.source.html" class="el_package">com.amaap.scrabblegame.controller</a> &gt; <span class="el_source">PlayerController.java</span></div><h1>PlayerController.java</h1><pre class="source lang-java linenums">package com.amaap.scrabblegame.controller;
+
+import com.amaap.scrabblegame.controller.dto.Http;
+import com.amaap.scrabblegame.controller.dto.Response;
+import com.amaap.scrabblegame.service.PlayerService;
+import com.amaap.scrabblegame.service.exception.InvalidIdException;
+import com.google.inject.Inject;
+
+public class PlayerController {
+    private final PlayerService playerService;
+
+    @Inject
+<span class="fc" id="L13">    public PlayerController(PlayerService playerService) {</span>
+<span class="fc" id="L14">        this.playerService = playerService;</span>
+<span class="fc" id="L15">    }</span>
+
+    public Response createPlayer(int id) {
+        try {
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">            if (playerService.createPlayer(id)) {</span>
+<span class="fc" id="L20">                return new Response(Http.OK);</span>
+            }
+<span class="fc" id="L22">        } catch (InvalidIdException e) {</span>
+<span class="fc" id="L23">            return new Response(Http.BAD_REQUEST);</span>
+<span class="nc" id="L24">        } catch (Exception e) {</span>
+<span class="nc" id="L25">            e.printStackTrace();</span>
+<span class="nc" id="L26">        }</span>
+<span class="nc" id="L27">        return new Response(Http.BAD_REQUEST);</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

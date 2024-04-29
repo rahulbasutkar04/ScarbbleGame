@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ScoringService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ScarbbleGame</a> &gt; <a href="index.source.html" class="el_package">com.amaap.scrabblegame.domain.sevice</a> &gt; <span class="el_source">ScoringService.java</span></div><h1>ScoringService.java</h1><pre class="source lang-java linenums">package com.amaap.scrabblegame.domain.sevice;
+
+import com.amaap.scrabblegame.domain.sevice.impl.DoubleCalculator;
+import com.amaap.scrabblegame.domain.sevice.impl.TripleCalculator;
+import com.google.inject.Inject;
+
+import java.util.Scanner;
+
+public class ScoringService {
+
+<span class="fc" id="L11">    PlayerInteractionService playerInteractionService = new PlayerInteractionService(new Scanner(System.in));</span>
+    private final ScrabbleCalculator scrabbleCalculator;
+
+
+    @Inject
+<span class="fc" id="L16">    public ScoringService(ScrabbleCalculator scrabbleCalculator) {</span>
+<span class="fc" id="L17">        this.scrabbleCalculator = scrabbleCalculator;</span>
+<span class="fc" id="L18">    }</span>
+
+    public int calculateScrabble(String word) {
+<span class="fc" id="L21">        int sum = 0;</span>
+
+<span class="fc" id="L23">        sum = scrabbleCalculator.calculateScore(word);</span>
+<span class="fc" id="L24">        System.out.println(&quot;Current Score:&quot; + sum);</span>
+
+<span class="fc" id="L26">        System.out.println(&quot;Do you want to Double an letter?(yes/no)&quot;);</span>
+       // String choice = playerInteractionService.takeUserInputAsString();
+<span class="fc" id="L28">        String choice=&quot;yes&quot;;</span>
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">        if (choice.equalsIgnoreCase(&quot;yes&quot;)) {</span>
+<span class="fc" id="L30">            System.out.println(&quot;Enter the letter to double..&quot;);</span>
+           // char c = playerInteractionService.takeUserInputAsChar();
+<span class="fc" id="L32">            char c='R';</span>
+<span class="fc" id="L33">            sum += new DoubleCalculator().doubleALetter(c,word);</span>
+        }
+
+<span class="fc" id="L36">        System.out.println(&quot;Current Score:&quot; + sum);</span>
+<span class="fc" id="L37">        System.out.println(&quot;Do you want to Double an word?(yes/no)&quot;);</span>
+       // String choice1 = playerInteractionService.takeUserInputAsString();
+<span class="fc" id="L39">        String choice1=&quot;yes&quot;;</span>
+<span class="pc bpc" id="L40" title="1 of 2 branches missed.">        if (choice1.equalsIgnoreCase(&quot;yes&quot;)) {</span>
+
+<span class="fc" id="L42">            sum += new DoubleCalculator().calculateScore(word);</span>
+        }
+
+<span class="fc" id="L45">        System.out.println(&quot;Current Score:&quot; + sum);</span>
+<span class="fc" id="L46">        System.out.println(&quot;Do you want to Triple an letter?(yes/no)&quot;);</span>
+
+       // String choice3 = playerInteractionService.takeUserInputAsString();
+<span class="fc" id="L49">        String choice3=&quot;yes&quot;;</span>
+
+<span class="pc bpc" id="L51" title="1 of 2 branches missed.">        if (choice3.equalsIgnoreCase(&quot;yes&quot;)) {</span>
+<span class="fc" id="L52">            System.out.println(&quot;Enter the letter to triple..&quot;);</span>
+           // char c = playerInteractionService.takeUserInputAsChar();
+<span class="fc" id="L54">            char c ='R';</span>
+<span class="fc" id="L55">            sum += new TripleCalculator().TripleALetter(c,word);</span>
+        }
+
+<span class="fc" id="L58">        System.out.println(&quot;Current Score:&quot; + sum);</span>
+<span class="fc" id="L59">        System.out.println(&quot;Do you want to Triple an word?(yes/no)&quot;);</span>
+
+
+       // String choice4 = playerInteractionService.takeUserInputAsString();
+<span class="fc" id="L63">        String choice4=&quot;yes&quot;;</span>
+<span class="pc bpc" id="L64" title="1 of 2 branches missed.">        if (choice4.equalsIgnoreCase(&quot;yes&quot;)) {</span>
+
+<span class="fc" id="L66">            sum += new TripleCalculator().calculateScore(word);</span>
+        }
+
+
+<span class="fc" id="L70">        return sum;</span>
+    }
+
+}
+
+
+
+
+
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

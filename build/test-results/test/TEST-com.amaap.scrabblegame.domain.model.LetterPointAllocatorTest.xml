@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.amaap.scrabblegame.domain.model.LetterPointAllocatorTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-04-29T16:48:21" hostname="RAHULSLAPPY" time="0.006">
+  <properties/>
+  <testcase name="shouldBeAbleToGiveValidValuesForTheCharacters()" classname="com.amaap.scrabblegame.domain.model.LetterPointAllocatorTest" time="0.003"/>
+  <testcase name="ShouldNotBeAbleToGetTheValuesIfInValidCharactersAreGiven()" classname="com.amaap.scrabblegame.domain.model.LetterPointAllocatorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

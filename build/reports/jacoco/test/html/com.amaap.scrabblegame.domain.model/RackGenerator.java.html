@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RackGenerator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ScarbbleGame</a> &gt; <a href="index.source.html" class="el_package">com.amaap.scrabblegame.domain.model</a> &gt; <span class="el_source">RackGenerator.java</span></div><h1>RackGenerator.java</h1><pre class="source lang-java linenums">package com.amaap.scrabblegame.domain.model;
+
+import java.util.Random;
+
+<span class="nc" id="L5">public class RackGenerator {</span>
+    private static final String VOWELS = &quot;AEIOU&quot;;
+    private static final String CONSONANTS = &quot;BCDFGHJKLMNPQRSTVWXYZ&quot;;
+
+    public String generateRack() {
+<span class="nc" id="L10">        Random random = new Random();</span>
+<span class="nc" id="L11">        StringBuilder rackBuilder = new StringBuilder();</span>
+
+<span class="nc" id="L13">        int vowelCount = random.nextInt(3) + 2;</span>
+<span class="nc bnc" id="L14" title="All 2 branches missed.">        for (int i = 0; i &lt; vowelCount; i++) {</span>
+<span class="nc" id="L15">            int index = random.nextInt(VOWELS.length());</span>
+<span class="nc" id="L16">            rackBuilder.append(VOWELS.charAt(index));</span>
+        }
+<span class="nc" id="L18">        int consonantCount = Math.max(7 - vowelCount, 4);</span>
+<span class="nc" id="L19">        consonantCount = Math.min(consonantCount, 15 - vowelCount);</span>
+<span class="nc bnc" id="L20" title="All 2 branches missed.">        for (int i = 0; i &lt; consonantCount; i++) {</span>
+<span class="nc" id="L21">            int index = random.nextInt(CONSONANTS.length());</span>
+<span class="nc" id="L22">            rackBuilder.append(CONSONANTS.charAt(index));</span>
+        }
+
+<span class="nc" id="L25">        String rack = rackBuilder.toString();</span>
+<span class="nc" id="L26">        char[] rackArray = rack.toCharArray();</span>
+<span class="nc bnc" id="L27" title="All 2 branches missed.">        for (int i = rackArray.length - 1; i &gt; 0; i--) {</span>
+<span class="nc" id="L28">            int index = random.nextInt(i + 1);</span>
+<span class="nc" id="L29">            char temp = rackArray[index];</span>
+<span class="nc" id="L30">            rackArray[index] = rackArray[i];</span>
+<span class="nc" id="L31">            rackArray[i] = temp;</span>
+        }
+
+<span class="nc" id="L34">        return new String(rackArray);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
