@@ -20,13 +20,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">26</div>
+<div class="counter">4</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">8</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -38,7 +38,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.362s</div>
+<div class="counter">0.278s</div>
 <p>duration</p>
 </div>
 </td>
@@ -47,8 +47,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">69%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -58,53 +58,13 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Packages</a>
 </li>
 <li>
-<a href="#tab1">Packages</a>
-</li>
-<li>
-<a href="#tab2">Classes</a>
+<a href="#tab1">Classes</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<ul class="linkList">
-<li>
-<a href="classes/com.amaap.scrabblegame.controller.GameControllerTest.html">GameControllerTest</a>.
-<a href="classes/com.amaap.scrabblegame.controller.GameControllerTest.html#ShouldBeAbleToNotStartTheGameForThePlayerAndRespondWithBADREQUEST()">ShouldBeAbleToNotStartTheGameForThePlayerAndRespondWithBADREQUEST()</a>
-</li>
-<li>
-<a href="classes/com.amaap.scrabblegame.controller.GameControllerTest.html">GameControllerTest</a>.
-<a href="classes/com.amaap.scrabblegame.controller.GameControllerTest.html#ShouldBeAbleToStartTheGameForThePlayerAndRespondWithOkIFGameStarts()">ShouldBeAbleToStartTheGameForThePlayerAndRespondWithOkIFGameStarts()</a>
-</li>
-<li>
-<a href="classes/com.amaap.scrabblegame.domain.sevice.GameInitializerTest.html">GameInitializerTest</a>.
-<a href="classes/com.amaap.scrabblegame.domain.sevice.GameInitializerTest.html#shouldBeAbleToAssignAnRackOfLetterAndStartTheGame()">shouldBeAbleToAssignAnRackOfLetterAndStartTheGame()</a>
-</li>
-<li>
-<a href="classes/com.amaap.scrabblegame.domain.sevice.GameInitializerTest.html">GameInitializerTest</a>.
-<a href="classes/com.amaap.scrabblegame.domain.sevice.GameInitializerTest.html#shouldNotBeAbleToAssignRackAndStartTheGame()">shouldNotBeAbleToAssignRackAndStartTheGame()</a>
-</li>
-<li>
-<a href="classes/com.amaap.scrabblegame.domain.sevice.PlayGameTest.html">PlayGameTest</a>.
-<a href="classes/com.amaap.scrabblegame.domain.sevice.PlayGameTest.html#shouldBeAbleToPlayTheGameAfterAssigningRack()">shouldBeAbleToPlayTheGameAfterAssigningRack()</a>
-</li>
-<li>
-<a href="classes/com.amaap.scrabblegame.domain.sevice.ScoringServiceTest.html">ScoringServiceTest</a>.
-<a href="classes/com.amaap.scrabblegame.domain.sevice.ScoringServiceTest.html#shouldBeAbleToCalculateTheScrabbleWithDoubleAndTriplesANdGiveTotalScore()">shouldBeAbleToCalculateTheScrabbleWithDoubleAndTriplesANdGiveTotalScore()</a>
-</li>
-<li>
-<a href="classes/com.amaap.scrabblegame.service.GameServiceTest.html">GameServiceTest</a>.
-<a href="classes/com.amaap.scrabblegame.service.GameServiceTest.html#shouldBeAbleToStartTheGame()">shouldBeAbleToStartTheGame()</a>
-</li>
-<li>
-<a href="classes/com.amaap.scrabblegame.service.GameServiceTest.html">GameServiceTest</a>.
-<a href="classes/com.amaap.scrabblegame.service.GameServiceTest.html#shouldNotBeAbleToStartTheGameIfNoPlayersFound()">shouldNotBeAbleToStartTheGameIfNoPlayersFound()</a>
-</li>
-</ul>
-</div>
-<div id="tab1" class="tab">
 <h2>Packages</h2>
 <table>
 <thead>
@@ -119,59 +79,19 @@
 </thead>
 <tbody>
 <tr>
-<td class="failures">
-<a href="packages/com.amaap.scrabblegame.controller.html">com.amaap.scrabblegame.controller</a>
+<td class="success">
+<a href="packages/com.amaap.scrabblegame.repository.impl.db.impl.html">com.amaap.scrabblegame.repository.impl.db.impl</a>
 </td>
 <td>4</td>
-<td>2</td>
-<td>0</td>
-<td>0.204s</td>
-<td class="failures">50%</td>
-</tr>
-<tr>
-<td class="success">
-<a href="packages/com.amaap.scrabblegame.domain.model.html">com.amaap.scrabblegame.domain.model</a>
-</td>
-<td>2</td>
 <td>0</td>
 <td>0</td>
-<td>0.004s</td>
+<td>0.278s</td>
 <td class="success">100%</td>
-</tr>
-<tr>
-<td class="failures">
-<a href="packages/com.amaap.scrabblegame.domain.sevice.html">com.amaap.scrabblegame.domain.sevice</a>
-</td>
-<td>12</td>
-<td>4</td>
-<td>0</td>
-<td>0.111s</td>
-<td class="failures">66%</td>
-</tr>
-<tr>
-<td class="success">
-<a href="packages/com.amaap.scrabblegame.repository.html">com.amaap.scrabblegame.repository</a>
-</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>0.008s</td>
-<td class="success">100%</td>
-</tr>
-<tr>
-<td class="failures">
-<a href="packages/com.amaap.scrabblegame.service.html">com.amaap.scrabblegame.service</a>
-</td>
-<td>5</td>
-<td>2</td>
-<td>0</td>
-<td>0.035s</td>
-<td class="failures">60%</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="tab2" class="tab">
+<div id="tab1" class="tab">
 <h2>Classes</h2>
 <table>
 <thead>
@@ -186,133 +106,13 @@
 </thead>
 <tbody>
 <tr>
-<td class="failures">
-<a href="classes/com.amaap.scrabblegame.controller.GameControllerTest.html">com.amaap.scrabblegame.controller.GameControllerTest</a>
-</td>
-<td>2</td>
-<td>2</td>
-<td>0</td>
-<td>0.153s</td>
-<td class="failures">0%</td>
-</tr>
-<tr>
 <td class="success">
-<a href="classes/com.amaap.scrabblegame.controller.PlayerControllerTest.html">com.amaap.scrabblegame.controller.PlayerControllerTest</a>
-</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0.051s</td>
-<td class="success">100%</td>
-</tr>
-<tr>
-<td class="success">
-<a href="classes/com.amaap.scrabblegame.domain.model.LetterPointAllocatorTest.html">com.amaap.scrabblegame.domain.model.LetterPointAllocatorTest</a>
-</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0.004s</td>
-<td class="success">100%</td>
-</tr>
-<tr>
-<td class="success">
-<a href="classes/com.amaap.scrabblegame.domain.sevice.DoubleCalculatorTest.html">com.amaap.scrabblegame.domain.sevice.DoubleCalculatorTest</a>
-</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0.007s</td>
-<td class="success">100%</td>
-</tr>
-<tr>
-<td class="failures">
-<a href="classes/com.amaap.scrabblegame.domain.sevice.GameInitializerTest.html">com.amaap.scrabblegame.domain.sevice.GameInitializerTest</a>
-</td>
-<td>2</td>
-<td>2</td>
-<td>0</td>
-<td>0.012s</td>
-<td class="failures">0%</td>
-</tr>
-<tr>
-<td class="failures">
-<a href="classes/com.amaap.scrabblegame.domain.sevice.PlayGameTest.html">com.amaap.scrabblegame.domain.sevice.PlayGameTest</a>
+<a href="classes/com.amaap.scrabblegame.repository.impl.db.impl.FakeDatabaseTest.html">com.amaap.scrabblegame.repository.impl.db.impl.FakeDatabaseTest</a>
 </td>
 <td>4</td>
-<td>1</td>
-<td>0</td>
-<td>0.062s</td>
-<td class="failures">75%</td>
-</tr>
-<tr>
-<td class="success">
-<a href="classes/com.amaap.scrabblegame.domain.sevice.PlayerInteractionServiceTest.html">com.amaap.scrabblegame.domain.sevice.PlayerInteractionServiceTest</a>
-</td>
-<td>2</td>
 <td>0</td>
 <td>0</td>
-<td>0.007s</td>
-<td class="success">100%</td>
-</tr>
-<tr>
-<td class="failures">
-<a href="classes/com.amaap.scrabblegame.domain.sevice.ScoringServiceTest.html">com.amaap.scrabblegame.domain.sevice.ScoringServiceTest</a>
-</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0.017s</td>
-<td class="failures">0%</td>
-</tr>
-<tr>
-<td class="success">
-<a href="classes/com.amaap.scrabblegame.domain.sevice.ScrabbleScoreCalculatorTest.html">com.amaap.scrabblegame.domain.sevice.ScrabbleScoreCalculatorTest</a>
-</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0.001s</td>
-<td class="success">100%</td>
-</tr>
-<tr>
-<td class="success">
-<a href="classes/com.amaap.scrabblegame.domain.sevice.TripleCalculatorTest.html">com.amaap.scrabblegame.domain.sevice.TripleCalculatorTest</a>
-</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0.005s</td>
-<td class="success">100%</td>
-</tr>
-<tr>
-<td class="success">
-<a href="classes/com.amaap.scrabblegame.repository.InMemoryPlayerRepositoryTest.html">com.amaap.scrabblegame.repository.InMemoryPlayerRepositoryTest</a>
-</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>0.008s</td>
-<td class="success">100%</td>
-</tr>
-<tr>
-<td class="failures">
-<a href="classes/com.amaap.scrabblegame.service.GameServiceTest.html">com.amaap.scrabblegame.service.GameServiceTest</a>
-</td>
-<td>2</td>
-<td>2</td>
-<td>0</td>
-<td>0.008s</td>
-<td class="failures">0%</td>
-</tr>
-<tr>
-<td class="success">
-<a href="classes/com.amaap.scrabblegame.service.PlayerServiceTest.html">com.amaap.scrabblegame.service.PlayerServiceTest</a>
-</td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>0.027s</td>
+<td>0.278s</td>
 <td class="success">100%</td>
 </tr>
 </tbody>
@@ -326,7 +126,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.4</a> at 29-Apr-2024, 10:18:22 pm</p>
+<a href="http://www.gradle.org">Gradle 7.4</a> at 15-Jun-2024, 4:31:13 pm</p>
 </div>
 </div>
 </body>

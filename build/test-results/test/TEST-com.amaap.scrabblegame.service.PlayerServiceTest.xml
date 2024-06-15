@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.amaap.scrabblegame.service.PlayerServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-04-29T16:48:21" hostname="RAHULSLAPPY" time="0.077">
-  <properties/>
-  <testcase name="shouldNotBeAbleToCreatePlayerIfDuplicateIdFound()" classname="com.amaap.scrabblegame.service.PlayerServiceTest" time="0.017"/>
-  <testcase name="shouldCreatePlayerSuccessfully()" classname="com.amaap.scrabblegame.service.PlayerServiceTest" time="0.005"/>
-  <testcase name="shouldThrowExceptionIfInvalidIdIsPassed()" classname="com.amaap.scrabblegame.service.PlayerServiceTest" time="0.005"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

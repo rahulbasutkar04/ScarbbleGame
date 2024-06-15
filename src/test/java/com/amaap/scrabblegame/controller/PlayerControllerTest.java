@@ -1,9 +1,11 @@
 package com.amaap.scrabblegame.controller;
 
+import com.amaap.scrabblegame.ScrabbleGameModule;
 import com.amaap.scrabblegame.controller.dto.Http;
 import com.amaap.scrabblegame.controller.dto.Response;
 import com.amaap.scrabblegame.repository.impl.InMemoryPlayerRepository;
-import com.amaap.scrabblegame.service.PlayerService;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,14 +14,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PlayerControllerTest {
 
     InMemoryPlayerRepository inMemoryPlayerRepository;
-    PlayerService playerService;
     PlayerController playerController;
 
     @BeforeEach
     void setUp() {
-        inMemoryPlayerRepository = new InMemoryPlayerRepository();
-        playerService = new PlayerService(inMemoryPlayerRepository);
-        playerController = new PlayerController(playerService);
+        Injector injector = Guice.createInjector(new ScrabbleGameModule());
+        inMemoryPlayerRepository = injector.getInstance(InMemoryPlayerRepository.class);
+        playerController = injector.getInstance(PlayerController.class);
     }
 
     @Test

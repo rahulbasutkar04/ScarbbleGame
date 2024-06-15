@@ -7,10 +7,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class LetterPointAllocatorTest {
 
+    LetterPointAllocator letterPointAllocator = new LetterPointAllocator();
+
     @Test
     void shouldBeAbleToGiveValidValuesForTheCharacters() {
-        // arrange
-        LetterPointAllocator letterPointAllocator = new LetterPointAllocator();
 
         // act & assert
         assertEquals(1, letterPointAllocator.getPoint('A'));
@@ -49,9 +49,6 @@ class LetterPointAllocatorTest {
 
     @Test
     void ShouldNotBeAbleToGetTheValuesIfInValidCharactersAreGiven() {
-        // arrange
-        LetterPointAllocator letterPointAllocator = new LetterPointAllocator();
-
         // act & assert
         assertEquals(0, letterPointAllocator.getPoint(' '));
         assertEquals(0, letterPointAllocator.getPoint('-'));

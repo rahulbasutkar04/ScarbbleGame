@@ -1,9 +1,11 @@
 package com.amaap.scrabblegame.service;
 
-import com.amaap.scrabblegame.domain.sevice.GameInitializerService;
+import com.amaap.scrabblegame.ScrabbleGameModule;
+import com.amaap.scrabblegame.domain.service.GameInitializerService;
 import com.amaap.scrabblegame.repository.GameScoreRepository;
-import com.amaap.scrabblegame.repository.impl.InMemoryGameScoreRepository;
 import com.amaap.scrabblegame.service.exception.InvalidInputException;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,12 +18,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class GameServiceTest {
 
     private GameService gameService;
+    private GameScoreRepository gameScoreRepository;
 
     @BeforeEach
     void setUp() {
-        InMemoryGameScoreRepository inMemoryGameScoreRepository = new InMemoryGameScoreRepository();
-        GameInitializerService gameInitializerService = new GameInitializerService(inMemoryGameScoreRepository);
-        GameScoreRepository gameScoreRepository = new InMemoryGameScoreRepository();
+
+        Injector injector = Guice.createInjector(new ScrabbleGameModule());
+        gameScoreRepository = injector.getInstance(GameScoreRepository.class);
+        GameInitializerService gameInitializerService = injector.getInstance(GameInitializerService.class);
         gameService = new GameService(gameScoreRepository, gameInitializerService);
     }
 

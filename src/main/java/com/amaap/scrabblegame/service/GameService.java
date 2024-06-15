@@ -1,6 +1,6 @@
 package com.amaap.scrabblegame.service;
 
-import com.amaap.scrabblegame.domain.sevice.GameInitializerService;
+import com.amaap.scrabblegame.domain.service.GameInitializerService;
 import com.amaap.scrabblegame.repository.GameScoreRepository;
 import com.amaap.scrabblegame.service.exception.InvalidInputException;
 import com.google.inject.Inject;

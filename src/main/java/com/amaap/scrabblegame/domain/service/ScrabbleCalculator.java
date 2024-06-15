@@ -1,4 +1,4 @@
-package com.amaap.scrabblegame.domain.sevice;
+package com.amaap.scrabblegame.domain.service;
 
 public interface ScrabbleCalculator {
     int calculateScore(String word);

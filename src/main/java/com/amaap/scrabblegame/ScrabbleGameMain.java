@@ -19,10 +19,8 @@ public class ScrabbleGameMain {
 
         Scanner sc = new Scanner(System.in);
         Injector injector = Guice.createInjector(new ScrabbleGameModule());
-        PlayerRepository playerRepository = injector.getInstance(PlayerRepository.class);
-        PlayerController playerController = new PlayerController(new PlayerService(playerRepository));
-        GameService gameService = injector.getInstance(GameService.class);
-        GameController gameController = new GameController(playerRepository, gameService);
+        PlayerController playerController =injector.getInstance(PlayerController.class);
+        GameController gameController =injector.getInstance(GameController.class);
 
         int playerCount = 0;
         boolean validInput = false;

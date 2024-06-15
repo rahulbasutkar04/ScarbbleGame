@@ -1,9 +1,7 @@
-package com.amaap.scrabblegame.domain.sevice;
+package com.amaap.scrabblegame.domain.service;
 
 
 import com.amaap.scrabblegame.ScrabbleGameModule;
-import com.amaap.scrabblegame.repository.impl.InMemoryGameScoreRepository;
-import com.amaap.scrabblegame.repository.impl.db.Database;
 import com.amaap.scrabblegame.service.exception.InvalidInputException;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -23,8 +21,8 @@ class GameInitializerServiceTest {
 
     @BeforeEach
     void setUp() {
-        Injector injector= Guice.createInjector(new ScrabbleGameModule());
-        gameInitializerService =injector.getInstance(GameInitializerService.class);
+        Injector injector = Guice.createInjector(new ScrabbleGameModule());
+        gameInitializerService = injector.getInstance(GameInitializerService.class);
     }
 
     @Test

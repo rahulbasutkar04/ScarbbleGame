@@ -1,7 +1,7 @@
-package com.amaap.scrabblegame.domain.sevice.impl;
+package com.amaap.scrabblegame.domain.service.impl;
 
 import com.amaap.scrabblegame.domain.model.LetterPointAllocator;
-import com.amaap.scrabblegame.domain.sevice.ScrabbleCalculator;
+import com.amaap.scrabblegame.domain.service.ScrabbleCalculator;
 
 public class ScrabbleScoreCalculator implements ScrabbleCalculator {
     LetterPointAllocator letterPointAllocator=new LetterPointAllocator();

@@ -1,8 +1,11 @@
 package com.amaap.scrabblegame.service;
 
+import com.amaap.scrabblegame.ScrabbleGameModule;
 import com.amaap.scrabblegame.repository.impl.InMemoryPlayerRepository;
 import com.amaap.scrabblegame.service.exception.DuplicateIdException;
 import com.amaap.scrabblegame.service.exception.InvalidIdException;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,8 +20,9 @@ class PlayerServiceTest {
 
     @BeforeEach
     void setUp() {
-        inMemoryPlayerRepository = new InMemoryPlayerRepository();
-        playerService = new PlayerService(inMemoryPlayerRepository);
+        Injector injector = Guice.createInjector(new ScrabbleGameModule());
+        inMemoryPlayerRepository = injector.getInstance(InMemoryPlayerRepository.class);
+        playerService = injector.getInstance(PlayerService.class);
     }
 
     @Test

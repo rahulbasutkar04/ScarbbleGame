@@ -1,7 +1,7 @@
-package com.amaap.scrabblegame.domain.sevice;
+package com.amaap.scrabblegame.domain.service;
 
-import com.amaap.scrabblegame.domain.sevice.impl.DoubleCalculator;
-import com.amaap.scrabblegame.domain.sevice.impl.TripleCalculator;
+import com.amaap.scrabblegame.domain.service.impl.DoubleCalculator;
+import com.amaap.scrabblegame.domain.service.impl.TripleCalculator;
 import com.google.inject.Inject;
 
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package com.amaap.scrabblegame.domain.sevice;
+package com.amaap.scrabblegame.domain.service;
 
 import com.amaap.scrabblegame.domain.model.RackGenerator;
 import com.amaap.scrabblegame.repository.impl.InMemoryGameScoreRepository;

@@ -1,18 +1,28 @@
 package com.amaap.scrabblegame.repository;
 
+import com.amaap.scrabblegame.ScrabbleGameModule;
 import com.amaap.scrabblegame.repository.impl.InMemoryPlayerRepository;
+import com.amaap.scrabblegame.repository.impl.db.Database;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class InMemoryPlayerRepositoryTest {
 
     private InMemoryPlayerRepository repository;
+    private Database database;
 
     @BeforeEach
     void setUp() {
-        repository = new InMemoryPlayerRepository();
+        Injector injector = Guice.createInjector(new ScrabbleGameModule());
+        database = injector.getInstance(Database.class);
+        repository = new InMemoryPlayerRepository(database);
     }
 
     @Test

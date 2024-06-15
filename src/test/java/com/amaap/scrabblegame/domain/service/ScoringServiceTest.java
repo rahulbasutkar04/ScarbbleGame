@@ -1,7 +1,7 @@
-package com.amaap.scrabblegame.domain.sevice;
+package com.amaap.scrabblegame.domain.service;
 
 
-import com.amaap.scrabblegame.domain.sevice.impl.ScrabbleScoreCalculator;
+import com.amaap.scrabblegame.domain.service.impl.ScrabbleScoreCalculator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,12 +13,12 @@ class ScoringServiceTest {
 
     @BeforeEach
     void setUp() {
-        ScrabbleCalculator scrabbleCalculator=new ScrabbleScoreCalculator();
+        ScrabbleCalculator scrabbleCalculator = new ScrabbleScoreCalculator();
         scoringService = new ScoringService(scrabbleCalculator);
     }
 
     @Test
-    void shouldBeAbleToCalculateTheScrabbleWithDoubleAndTriplesANdGiveTotalScore(){
+    void shouldBeAbleToCalculateTheScrabbleWithDoubleAndTriplesANdGiveTotalScore() {
         // arrange
         String word = "SCRABBLE";
 
@@ -28,7 +28,6 @@ class ScoringServiceTest {
         // assert
         assertEquals(61, score);
     }
-
 
 
 }
