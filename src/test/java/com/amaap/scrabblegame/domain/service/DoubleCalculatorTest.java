@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class DoubleCalculatorTest {
 
     @Test
-    void ShouldBeAbleToDoubleTeLetterAndGiveScore() {
+    void ShouldBeAbleToDoubleTheLetterAndGiveScore() {
         // arrange
         DoubleCalculator doubleCalculator = new DoubleCalculator();
         String word = "SCRABBLE";

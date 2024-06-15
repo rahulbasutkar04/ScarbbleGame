@@ -1,8 +1,12 @@
 package com.amaap.scrabblegame.domain.sevice;
 
 
+import com.amaap.scrabblegame.ScrabbleGameModule;
 import com.amaap.scrabblegame.repository.impl.InMemoryGameScoreRepository;
+import com.amaap.scrabblegame.repository.impl.db.Database;
 import com.amaap.scrabblegame.service.exception.InvalidInputException;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,8 +23,8 @@ class GameInitializerServiceTest {
 
     @BeforeEach
     void setUp() {
-        InMemoryGameScoreRepository gameScoreRepository = new InMemoryGameScoreRepository();
-        gameInitializerService = new GameInitializerService(gameScoreRepository);
+        Injector injector= Guice.createInjector(new ScrabbleGameModule());
+        gameInitializerService =injector.getInstance(GameInitializerService.class);
     }
 
     @Test
@@ -40,7 +44,7 @@ class GameInitializerServiceTest {
     }
 
     @Test
-    void shouldNotBeAbleToAssignRackAndStartTheGame() throws InvalidInputException {
+    void shouldBeAbleToReturnFalseIfRackNotAssigned() throws InvalidInputException {
         // arrange
         List<Integer> playerIds = new ArrayList<>();
 
