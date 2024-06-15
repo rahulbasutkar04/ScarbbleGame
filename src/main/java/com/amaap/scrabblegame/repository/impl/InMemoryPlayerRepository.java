@@ -1,19 +1,25 @@
 package com.amaap.scrabblegame.repository.impl;
 
 import com.amaap.scrabblegame.repository.PlayerRepository;
+import com.amaap.scrabblegame.repository.impl.db.Database;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class InMemoryPlayerRepository implements PlayerRepository {
-    List<Integer> playerId=new ArrayList<>();
+
+    public InMemoryPlayerRepository(Database database) {
+        this.database = database;
+    }
+
+    private Database database;
+
     @Override
     public void insertPlayer(int id) {
-        playerId.add(id);
+        database.inertIntoPlayerTable(id);
     }
 
     @Override
     public List<Integer> getPlayerId() {
-        return playerId;
+        return database.getPlayers();
     }
 }
